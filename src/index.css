@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bgPrimary{
+  @apply bg-[#008e48]
+}
+.textPrimary {
+  @apply text-[#008e48] text-3xl font-bold
+}
