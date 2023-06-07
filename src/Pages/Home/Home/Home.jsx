@@ -4,6 +4,7 @@ import PopularInstructor from "../PopularInstractor/PopularInstructor";
 
 const Home = () => {
   return (
+    // TODO Add an extra section
     <div>
       <Banner></Banner>
       <PopularClasses></PopularClasses>

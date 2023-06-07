@@ -7,10 +7,10 @@ const Navbar = () => {
   const menuItem = (
     <>
       <li className="hover:bg-[#018e47]">
-        <Link>Home</Link>
+        <Link to={"/"}>Home</Link>
       </li>
       <li>
-        <Link>Home</Link>
+        <Link to="instructor">Instructor</Link>
       </li>
       <li>
         <Link>Home</Link>
