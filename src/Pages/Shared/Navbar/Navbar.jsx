@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import Container from "../../../Components/Container";
+import logo from "../../../assets/Logo.png";
 
 const Navbar = () => {
   const user = true;
@@ -13,7 +14,7 @@ const Navbar = () => {
         <Link to="instructor">Instructor</Link>
       </li>
       <li>
-        <Link>Home</Link>
+        <Link to="allclass">Classes</Link>
       </li>
       {user ? (
         <>
@@ -55,17 +56,22 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 p-2 shadow bgPrimary rounded-box w-52"
               >
                 {menuItem}
               </ul>
             </div>
             <Link to={"/"}>
-              <img
-                src=""
-                className=" cursor-pointer ml-0 hidden md:block normal-case text-xl"
-                alt="Logo"
-              />
+              <div className="flex gap-4 items-center">
+                <img
+                  src={logo}
+                  className=" cursor-pointer w-8 h-8 ml-0 hidden md:block normal-case text-xl"
+                  alt="Logo"
+                />
+                <p className="uppercase hidden lg:block font-bold text-xl">
+                  SportsFit
+                </p>
+              </div>
             </Link>
           </div>
           <div className="hidden lg:flex">

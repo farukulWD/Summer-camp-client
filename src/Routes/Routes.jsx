@@ -3,6 +3,7 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Register from "../Pages/Register/Register";
 import Instructor from "../Pages/Instructor/Instructor";
+import AllClass from "../Pages/AllClass/AllClass";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "instructor",
         element: <Instructor></Instructor>,
+      },
+      {
+        path: "allclass",
+        element: <AllClass></AllClass>,
       },
     ],
   },
