@@ -2,9 +2,19 @@ import { Link } from "react-router-dom";
 
 import Container from "../../../Components/Container";
 import logo from "../../../assets/Logo.png";
+import useAuth from "../../../Hooks/useAuth";
 
 const Navbar = () => {
-  const user = true;
+  const { user, logOut } = useAuth();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
   const menuItem = (
     <>
       <li className="hover:bg-[#018e47]">
@@ -18,16 +28,19 @@ const Navbar = () => {
       </li>
       {user ? (
         <>
+          <img
+            className="w-6 h-6 mt-2 rounded-full"
+            src={user ? user.photoURL : ""}
+            alt=""
+          />
+
           <li>
-            <img src="" alt="" />
-          </li>
-          <li>
-            <Link>Log Out</Link>
+            <Link onClick={handleLogOut}>Log Out</Link>
           </li>
         </>
       ) : (
         <li>
-          <Link>Login</Link>
+          <Link to={"/login"}>Login</Link>
         </li>
       )}
     </>

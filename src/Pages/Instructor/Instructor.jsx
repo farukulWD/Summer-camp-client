@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "../../Components/Container";
 import InstructorCard from "./InstructorCard";
 import CommonBanner from "../../Components/CommonBanner";
@@ -7,9 +7,11 @@ import bannerimg from "../../assets/download.jpeg";
 
 const Instructor = () => {
   const [instructors, setInstructors] = useState([]);
-  axios.get("PopularInstructor.json").then((res) => {
-    setInstructors(res.data);
-  });
+  useEffect(() => {
+    axios.get("PopularInstructor.json").then((res) => {
+      setInstructors(res.data);
+    });
+  }, []);
 
   return (
     <div className="pt-[80px] mb-36">

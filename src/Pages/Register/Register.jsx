@@ -1,10 +1,17 @@
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
+import useAuth from "../../Hooks/useAuth";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const { createUserWithEmail, updateUserProfile } = useAuth();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
@@ -13,8 +20,38 @@ const Register = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    const { email, password, name, photoUrl, address, phoneNumber, gender } =
+      data;
 
-    console.log(data);
+    createUserWithEmail(email, password)
+      .then((result) => {
+        console.log(result.user);
+        updateUserProfile(name, photoUrl)
+          .then(() => {
+            // const savedUser = ;
+            axios
+              .post("http://localhost:5000/users", {
+                name: name,
+                gender: gender,
+                address: address,
+                phone: phoneNumber,
+                email: email,
+                role: "student",
+              })
+              .then((data) => {
+                if (data.data.insertedId) {
+                  Swal.fire({
+                    icon: "success",
+                    title: "Sign UP Success",
+                  });
+                  reset();
+                  navigate("/");
+                }
+              });
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err.message));
   };
 
   return (

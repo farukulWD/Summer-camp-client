@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "../../Components/Container";
 import AllClassCard from "./AllClassCard";
 import axios from "axios";
@@ -7,11 +7,13 @@ import bannerimg from "../../assets/football.jpg";
 
 const AllClass = () => {
   const [allClass, setAllClass] = useState([]);
-  axios.get("classes.json").then((res) => {
-    setAllClass(res.data);
-  });
+  useEffect(() => {
+    axios.get("classes.json").then((res) => {
+      setAllClass(res.data);
+    });
+  }, []);
   return (
-    <div className="pt-[80px] mb-36">
+    <div className="pt-[64px] mb-36">
       <CommonBanner
         img={bannerimg}
         title={"Our All Classes Here"}
