@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { createUserWithEmail, updateUserProfile } = useAuth();
@@ -164,6 +164,12 @@ const Register = () => {
             {...register("address")}
           />
         </div>
+        <p className="mb-4">
+          Already Have an account?{" "}
+          <Link className="text-[#008e48]" to={"/login"}>
+            Login
+          </Link>
+        </p>
         <button type="submit" className="btnPrimary w-full">
           Register
         </button>

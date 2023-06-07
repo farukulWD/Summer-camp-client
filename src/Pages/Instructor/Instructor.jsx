@@ -14,7 +14,7 @@ const Instructor = () => {
   }, []);
 
   return (
-    <div className="pt-[80px] mb-36">
+    <div className="pt-[64px] mb-36">
       <CommonBanner img={bannerimg} title={"Instructor"}></CommonBanner>
       <h3 className="textHeading text-center my-16">Our All Instructor</h3>
       <Container>

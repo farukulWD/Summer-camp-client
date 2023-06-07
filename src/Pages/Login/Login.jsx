@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
-import Container from "../../Components/Container";
+import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
+  const { Login } = useAuth();
   const {
     register,
     handleSubmit,
@@ -9,7 +11,14 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data); // You can replace this with your own logic for handling the form submission
+    const { email, password } = data;
+    Login(email, password)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   return (
@@ -42,21 +51,19 @@ const Login = () => {
             className="w-full p-2 border focus:outline-none focus:border-green-500 border-gray-300 rounded"
             {...register("password", {
               required: "Password is required",
-              minLength: {
-                value: 6,
-                message: "Password must have at least 6 characters",
-              },
-              pattern: {
-                value: /^(?=.*[A-Z])(?=.*\W).*$/,
-                message:
-                  "Password must contain a capital letter and a special character",
-              },
             })}
           />
           {errors.password && (
             <span className="text-red-500">{errors.password.message}</span>
           )}
         </div>
+
+        <p className="mb-4">
+          Don't Have an account?{" "}
+          <Link to={"/register"} className="text-[#008e48]">
+            Register
+          </Link>
+        </p>
 
         <button type="submit" className="btnPrimary w-full">
           Login
