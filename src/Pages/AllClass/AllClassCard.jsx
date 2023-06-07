@@ -1,9 +1,50 @@
+import axios from "axios";
+import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
+
 const AllClassCard = ({ classData }) => {
-  const user = false;
+  const { user, loading } = useAuth();
+  if (loading) {
+    return <p>loading.....</p>;
+  }
 
   const handleSelect = (selectedClass) => {
-    if (user) {
-      console.log(selectedClass);
+    if (user && user?.email) {
+      const {
+        _id,
+        class_name,
+        description,
+        age_group,
+        location,
+        duration,
+        picture,
+        price,
+        rating,
+        instructor,
+      } = selectedClass;
+      axios
+        .post("http://localhost:5000/selected", {
+          id: _id,
+          class_name,
+          description,
+          picture,
+          age_group,
+          location,
+          duration,
+          price,
+          rating,
+          instructor,
+          studentName: user.displayName,
+          studentEmail: user.email,
+        })
+        .then((res) => {
+          if (res.data.insertedId) {
+            Swal.fire({
+              icon: "success",
+              title: "Selected Success",
+            });
+          }
+        });
     } else {
       console.log("please login");
     }

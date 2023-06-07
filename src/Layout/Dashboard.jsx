@@ -20,12 +20,16 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bgPrimary text-white ">
             {/* Sidebar content here */}
-            <li>
-              <Link to="/dashboard/selectedclass">Selected Class</Link>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>
+            {user && (
+              <>
+                <li>
+                  <Link to="/dashboard/selectedclass">My Selected Classes</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/enrolled">My Enrolled Classes</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
+import GoogleLogin from "../../Components/GoogleLogin";
 
 const Register = () => {
   const { createUserWithEmail, updateUserProfile } = useAuth();
@@ -20,8 +21,7 @@ const Register = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    const { email, password, name, photoUrl, address, phoneNumber, gender } =
-      data;
+    const { email, password, name, photoUrl } = data;
 
     createUserWithEmail(email, password)
       .then((result) => {
@@ -32,9 +32,7 @@ const Register = () => {
             axios
               .post("http://localhost:5000/users", {
                 name: name,
-                gender: gender,
-                address: address,
-                phone: phoneNumber,
+
                 email: email,
                 role: "student",
               })
@@ -55,9 +53,9 @@ const Register = () => {
   };
 
   return (
-    <div className="py-16">
+    <div className="py-16 max-w-lg mx-auto">
       <h2 className="textPrimary text-center my-10">Register Here</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto">
+      <form onSubmit={handleSubmit(onSubmit)} className="">
         <div className="mb-4">
           <input
             type="text"
@@ -138,32 +136,7 @@ const Register = () => {
             {...register("photoUrl")}
           />
         </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Gender"
-            id="gender"
-            className="w-full p-2 border focus:outline-none focus:border-green-500 border-gray-300 rounded"
-            {...register("gender")}
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            id="phoneNumber"
-            className="w-full p-2 border focus:outline-none focus:border-green-500 border-gray-300 rounded"
-            {...register("phoneNumber")}
-          />
-        </div>
-        <div className="mb-4">
-          <textarea
-            id="address"
-            placeholder="Address"
-            className="w-full p-2 border focus:outline-none focus:border-green-500 border-gray-300 rounded"
-            {...register("address")}
-          />
-        </div>
+
         <p className="mb-4">
           Already Have an account?{" "}
           <Link className="text-[#008e48]" to={"/login"}>
@@ -174,6 +147,8 @@ const Register = () => {
           Register
         </button>
       </form>
+      <div className="divider">OR</div>
+      <GoogleLogin></GoogleLogin>
     </div>
   );
 };

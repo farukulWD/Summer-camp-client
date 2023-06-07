@@ -30,12 +30,15 @@ const Navbar = () => {
         <>
           <img
             className="w-6 h-6 mt-2 rounded-full"
-            src={user ? user.photoURL : ""}
+            src={user && user.photoURL}
             alt=""
           />
 
           <li>
             <Link onClick={handleLogOut}>Log Out</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
           </li>
         </>
       ) : (

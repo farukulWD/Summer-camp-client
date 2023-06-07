@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import GoogleLogin from "../../Components/GoogleLogin";
 
 const Login = () => {
   const { Login } = useAuth();
@@ -22,9 +23,9 @@ const Login = () => {
   };
 
   return (
-    <div className="py-16 lg:h-[500px]">
+    <div className="py-16 max-w-lg mx-auto lg:h-[500px]">
       <h2 className="textPrimary text-center my-10">Please Login</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
           <input
             type="email"
@@ -59,7 +60,7 @@ const Login = () => {
         </div>
 
         <p className="mb-4">
-          Don't Have an account?{" "}
+          Do not Have an account?{" "}
           <Link to={"/register"} className="text-[#008e48]">
             Register
           </Link>
@@ -69,6 +70,7 @@ const Login = () => {
           Login
         </button>
       </form>
+      <GoogleLogin></GoogleLogin>
     </div>
   );
 };

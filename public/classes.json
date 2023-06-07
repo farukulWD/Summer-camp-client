@@ -1,5 +1,7 @@
 [
   {
+    "_id": "4124588764548",
+
     "class_name": "Soccer Training",
     "picture": "https://i.ibb.co/KwYckhj/Youth-Soccer-Training-1024x536.jpg",
     "number_of_students": 15,
@@ -27,6 +29,7 @@
     ]
   },
   {
+    "_id": "0124588764548",
     "class_name": "Basketball Skills",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 12,
@@ -50,6 +53,7 @@
     ]
   },
   {
+    "_id": "5124588764548",
     "class_name": "Swimming Lessons",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 8,
@@ -77,6 +81,7 @@
     ]
   },
   {
+    "_id": "8124588764548",
     "class_name": "Tennis Clinic",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 10,
@@ -104,6 +109,7 @@
     ]
   },
   {
+    "_id": "9124588764548",
     "class_name": "Gymnastics Fundamentals",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 15,
@@ -131,6 +137,7 @@
     ]
   },
   {
+    "_id": "5124588764548",
     "class_name": "Athletics Training",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 20,
@@ -154,6 +161,7 @@
     ]
   },
   {
+    "_id": "85124588764548",
     "class_name": "Volleyball Skills",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 10,
@@ -181,6 +189,7 @@
     ]
   },
   {
+    "_id": "8124578764548",
     "class_name": "Cricket Basics",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 12,
@@ -204,6 +213,7 @@
     ]
   },
   {
+    "_id": "8724588764548",
     "class_name": "Multi-Sport Fun",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 20,
