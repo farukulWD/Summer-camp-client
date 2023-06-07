@@ -4,6 +4,13 @@ import PopularCard from "./PopularCard";
 
 const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
+  // TODO use axios or Query
+
+  const sortedClasses = classes.sort(
+    (a, b) => b.number_of_students - a.number_of_students
+  );
+
+  const topClasses = sortedClasses.slice(0, 6);
   useEffect(() => {
     fetch("classes.json")
       .then((res) => res.json())
@@ -13,11 +20,11 @@ const PopularClasses = () => {
       });
   }, []);
   return (
-    <div className="mt-[80px]">
-      <h3 className="textHeading text-center mb-10">Our Popular Classes</h3>
+    <div className="mt-[80px] my-10">
+      <h3 className="textHeading text-center mb-16">Our Popular Classes</h3>
       <Container>
-        <div className="grid lg:grid-cols-3 gap-4">
-          {classes.map((singleClass, index) => (
+        <div className="grid lg:grid-cols-3  gap-10">
+          {topClasses.map((singleClass, index) => (
             <PopularCard key={index} classData={singleClass}></PopularCard>
           ))}
         </div>

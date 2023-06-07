@@ -1,0 +1,110 @@
+[
+  {
+    "name": "John Smith",
+    "category": "Soccer",
+    "number_of_students": 50,
+    "ratings": 4.8,
+    "picture": "https://i.ibb.co/SBzF1VZ/GOLD-C-1.jpg",
+    "bio": "John Smith is a highly experienced soccer coach with a passion for teaching young athletes. He has trained numerous successful soccer teams and specializes in developing players' technical skills and tactical understanding of the game.",
+    "contact": {
+      "email": "johnsmith@example.com",
+      "phone": "+1 123-456-7890"
+    }
+  },
+  {
+    "name": "Emily Johnson",
+    "category": "Basketball",
+    "number_of_students": 40,
+    "ratings": 4.6,
+    "picture": "https://i.ibb.co/gDSnTNF/Emily-Johnson.jpg",
+    "bio": "Emily Johnson is a dedicated basketball coach with a focus on skill development and teamwork. She has coached at both the high school and college levels and enjoys helping young athletes improve their basketball abilities.",
+    "contact": {
+      "email": "emilyjohnson@example.com",
+      "phone": "+1 987-654-3210"
+    }
+  },
+  {
+    "name": "Sarah Thompson",
+    "category": "Swimming",
+    "number_of_students": 30,
+    "ratings": 4.9,
+    "picture": "https://i.ibb.co/pLvb0Dm/7444-Friday-SEC-Swimming.jpg",
+    "bio": "Sarah Thompson is a certified swim instructor with over a decade of experience. She is passionate about teaching water safety and helping children become confident swimmers. Sarah creates a supportive and fun learning environment in her swimming classes.",
+    "contact": {
+      "email": "sarahthompson@example.com",
+      "phone": "+1 555-123-4567"
+    }
+  },
+  {
+    "name": "David Wilson",
+    "category": "Tennis",
+    "number_of_students": 25,
+    "ratings": 4.7,
+    "picture": "david_wilson.jpg",
+    "bio": "David Wilson is a skilled tennis coach with a strong background in competitive tennis. He has worked with players of all ages and skill levels, focusing on technique, strategy, and mental aspects of the game. David is dedicated to helping his students reach their full potential.",
+    "contact": {
+      "email": "davidwilson@example.com",
+      "phone": "+1 222-987-6543"
+    }
+  },
+  {
+    "name": "Alexa Rodriguez",
+    "category": "Gymnastics",
+    "number_of_students": 35,
+    "ratings": 4.5,
+    "picture": "https://i.ibb.co/SBzF1VZ/GOLD-C-1.jpg",
+    "bio": "Alexa Rodriguez is a passionate gymnastics coach with extensive experience in training young gymnasts. She emphasizes proper technique, strength, and flexibility while fostering a supportive and encouraging atmosphere in her classes.",
+    "contact": {
+      "email": "alexarodriguez@example.com",
+      "phone": "+1 333-555-7890"
+    }
+  },
+  {
+    "name": "Michael Davis",
+    "category": "Athletics",
+    "number_of_students": 60,
+    "ratings": 4.9,
+    "picture": "https://i.ibb.co/Rjkr8n5/Sprint-Run.jpg",
+    "bio": "Michael Davis is a dedicated athletics coach with a specialization in track and field events. He has trained athletes at both the youth and elite levels, helping them achieve their goals and reach their full potential. Michael is known for his technical expertise and commitment to his students.",
+    "contact": {
+      "email": "michaeldavis@example.com",
+      "phone": "+1 444-123-7890"
+    }
+  },
+  {
+    "name": "Jessica Thompson",
+    "category": "Volleyball",
+    "number_of_students": 30,
+    "ratings": 4.7,
+    "picture": "https://i.ibb.co/StbtDKX/swiming.jpg",
+    "bio": "Jessica Thompson is an experienced volleyball coach who focuses on skill development, teamwork, and strategy. She has coached various teams and works closely with her students to improve their technique and performance on the court.",
+    "contact": {
+      "email": "jessicathompson@example.com",
+      "phone": "+1 777-555-1234"
+    }
+  },
+  {
+    "name": "Ryan Patel",
+    "category": "Cricket",
+    "number_of_students": 20,
+    "ratings": 4.6,
+    "picture": "https://i.ibb.co/Rjkr8n5/Sprint-Run.jpg",
+    "bio": "Ryan Patel is a passionate cricket coach with experience playing and coaching at the professional level. He focuses on developing players' technical skills, understanding of the game, and fostering a love for cricket. Ryan enjoys sharing his knowledge and helping young cricketers excel.",
+    "contact": {
+      "email": "ryanpatel@example.com",
+      "phone": "+1 666-789-1234"
+    }
+  },
+  {
+    "name": "Michelle Anderson",
+    "category": "Multi-Sport",
+    "number_of_students": 50,
+    "ratings": 4.8,
+    "picture": "https://i.ibb.co/pLvb0Dm/7444-Friday-SEC-Swimming.jpg",
+    "bio": "Michelle Anderson is a versatile coach experienced in multiple sports. With a focus on fun and skill development, she introduces children to various sports and games, helping them discover their interests and abilities while promoting a healthy and active lifestyle.",
+    "contact": {
+      "email": "michelleanderson@example.com",
+      "phone": "+1 888-789-4567"
+    }
+  }
+]

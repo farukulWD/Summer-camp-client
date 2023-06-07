@@ -1,15 +1,16 @@
 const PopularCard = ({ classData }) => {
-  const { class_name, picture } = classData;
+  // TODO: Show Ratings Star
+  const { class_name, picture, number_of_students, rating } = classData;
   return (
     <div className="card  bg-base-100 shadow-xl">
       <figure>
-        <img src={picture} className="h-56" alt="Shoes" />
+        <img src={picture} className="h-60" alt={class_name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-[#008e48]">{class_name}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions">
-          <button className="btnPrimary">Buy Now</button>
+        <div className="flex mt-5 justify-between items-center">
+          <p>Students: {number_of_students}</p>
+          <p>Ratings: {rating}</p>
         </div>
       </div>
     </div>
