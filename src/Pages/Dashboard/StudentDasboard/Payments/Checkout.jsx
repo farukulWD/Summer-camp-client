@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 // TODO use secure systems
 
 const Checkout = ({ price, classData, isLoading }) => {
-  const { id, class_name, description, picture, rating, instructor } =
-    classData;
+  const { _id, class_name, description, picture, rating, instructor } =
+    classData || {};
   const stripe = useStripe();
   const element = useElements();
   const { user } = useAuth();
@@ -67,7 +67,7 @@ const Checkout = ({ price, classData, isLoading }) => {
     if (paymentIntent.status === "succeeded") {
       setTransactionId(paymentIntent.id);
       const payment = {
-        id: id,
+        id: _id,
         email: user?.email,
         studentName: user?.displayName,
         class_name,
@@ -94,7 +94,7 @@ const Checkout = ({ price, classData, isLoading }) => {
     }
   };
   return (
-    <div className="w-full">
+    <div className="w-1/2 mx-auto">
       {isLoading ? <p>Loading......</p> : null}
       <form onSubmit={handlePayment}>
         <CardElement

@@ -11,7 +11,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_pk_stripe);
 const Payments = () => {
   const { user } = useAuth();
   const { id } = useParams();
-
+  console.log(user);
   const {
     data: classes = [],
     refetch,
@@ -25,9 +25,11 @@ const Payments = () => {
       return res.json();
     },
   });
-  const selectClass = classes && classes.find((cl) => cl._id == id);
+  const selectClass = classes.find((cl) => cl._id == id);
+  console.log(selectClass, classes);
 
-  const price = selectClass?.price;
+  const price = selectClass?.price || 0;
+  console.log(price);
   return (
     <div className="w-full">
       {isLoading ? <p>Loading......</p> : null}

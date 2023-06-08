@@ -7,7 +7,9 @@
     "instructor_email": "example@gmail.com",
 
     "rating": 4.5,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
     "Available_seats": 0,
 
     "description": "Learn fundamental soccer skills and strategies with experienced instructor John Smith.",
@@ -18,7 +20,9 @@
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 12,
     "rating": 4,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
     "Available_seats": 20,
     "instructor": "Emily Johnson",
     "instructor_email": "example@gmail.com",
@@ -34,7 +38,9 @@
     "instructor_email": "example@gmail.com",
     "Available_seats": 0,
     "rating": 5,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
 
     "description": "Learn to swim and improve your technique with skilled instructor Sarah Thompson.",
     "status": "approved"
@@ -47,7 +53,9 @@
     "instructor_email": "example@gmail.com",
 
     "rating": 4.5,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
     "Available_seats": 0,
 
     "description": "Join our tennis clinic to learn or enhance your tennis skills with instructor David Wilson.",
@@ -61,7 +69,9 @@
     "instructor_email": "example@gmail.com",
     "status": "approved",
     "rating": 5,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
     "Available_seats": 20,
 
     "description": "Learn basic gymnastics skills, balance, and flexibility with instructor Alexa Rodriguez."
@@ -74,7 +84,9 @@
     "instructor_email": "example@gmail.com",
 
     "rating": 4.8,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
     "Available_seats": 20,
     "status": "approved",
     "description": "Train in various track and field events and improve your athletic abilities with instructor Michael Davis."
@@ -86,7 +98,9 @@
     "instructor": "Jessica Thompson",
     "instructor_email": "example@gmail.com",
     "rating": 5,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
     "Available_seats": 20,
     "status": "approved",
     "description": "Enhance your volleyball skills, including serving, passing, and spiking, with instructor Jessica Thompson."
@@ -98,7 +112,9 @@
     "instructor": "Ryan Patel",
     "instructor_email": "example@gmail.com",
     "rating": 4,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
     "Available_seats": 20,
     "status": "approved",
     "description": "Learn the basics of cricket, including batting, bowling, and fielding, with instructor Ryan Patel."
@@ -110,7 +126,9 @@
     "instructor": "Michelle Anderson",
     "instructor_email": "example@gmail.com",
     "rating": 4.3,
+    "totalEnrolled": 0,
     "price": 150,
+    "feedback": "",
     "Available_seats": 20,
     "status": "approved",
     "description": "Experience a variety of fun sports and games with instructor Michelle Anderson."

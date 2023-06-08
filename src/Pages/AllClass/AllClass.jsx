@@ -8,7 +8,7 @@ import bannerimg from "../../assets/football.jpg";
 const AllClass = () => {
   const [allClass, setAllClass] = useState([]);
   useEffect(() => {
-    axios.get("classes.json").then((res) => {
+    axios.get("http://localhost:5000/allClass").then((res) => {
       setAllClass(res.data);
     });
   }, []);
