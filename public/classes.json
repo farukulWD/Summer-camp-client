@@ -2,7 +2,7 @@
   {
     "class_name": "Soccer Training",
     "picture": "https://i.ibb.co/KwYckhj/Youth-Soccer-Training-1024x536.jpg",
-    "number_of_students": 15,
+
     "instructor": "John Smith",
     "instructor_email": "example@gmail.com",
 
@@ -12,13 +12,12 @@
     "feedback": "",
     "Available_seats": 0,
 
-    "description": "Learn fundamental soccer skills and strategies with experienced instructor John Smith.",
     "status": "approved"
   },
   {
     "class_name": "Basketball Skills",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
-    "number_of_students": 12,
+
     "rating": 4,
     "totalEnrolled": 0,
     "price": 150,
@@ -27,13 +26,12 @@
     "instructor": "Emily Johnson",
     "instructor_email": "example@gmail.com",
 
-    "description": "Improve your basketball skills and teamwork under the guidance of instructor Emily Johnson.",
     "status": "approved"
   },
   {
     "class_name": "Swimming Lessons",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
-    "number_of_students": 8,
+
     "instructor": "Sarah Thompson",
     "instructor_email": "example@gmail.com",
     "Available_seats": 0,
@@ -42,13 +40,12 @@
     "price": 150,
     "feedback": "",
 
-    "description": "Learn to swim and improve your technique with skilled instructor Sarah Thompson.",
     "status": "approved"
   },
   {
     "class_name": "Tennis Clinic",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
-    "number_of_students": 10,
+
     "instructor": "David Wilson",
     "instructor_email": "example@gmail.com",
 
@@ -58,13 +55,12 @@
     "feedback": "",
     "Available_seats": 0,
 
-    "description": "Join our tennis clinic to learn or enhance your tennis skills with instructor David Wilson.",
     "status": "approved"
   },
   {
     "class_name": "Gymnastics Fundamentals",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
-    "number_of_students": 15,
+
     "instructor": "Alexa Rodriguez",
     "instructor_email": "example@gmail.com",
     "status": "approved",
@@ -72,14 +68,12 @@
     "totalEnrolled": 0,
     "price": 150,
     "feedback": "",
-    "Available_seats": 20,
-
-    "description": "Learn basic gymnastics skills, balance, and flexibility with instructor Alexa Rodriguez."
+    "Available_seats": 20
   },
   {
     "class_name": "Athletics Training",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
-    "number_of_students": 20,
+
     "instructor": "Michael Davis",
     "instructor_email": "example@gmail.com",
 
@@ -88,13 +82,12 @@
     "price": 150,
     "feedback": "",
     "Available_seats": 20,
-    "status": "approved",
-    "description": "Train in various track and field events and improve your athletic abilities with instructor Michael Davis."
+    "status": "approved"
   },
   {
     "class_name": "Volleyball Skills",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
-    "number_of_students": 10,
+
     "instructor": "Jessica Thompson",
     "instructor_email": "example@gmail.com",
     "rating": 5,
@@ -102,13 +95,12 @@
     "price": 150,
     "feedback": "",
     "Available_seats": 20,
-    "status": "approved",
-    "description": "Enhance your volleyball skills, including serving, passing, and spiking, with instructor Jessica Thompson."
+    "status": "approved"
   },
   {
     "class_name": "Cricket Basics",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
-    "number_of_students": 12,
+
     "instructor": "Ryan Patel",
     "instructor_email": "example@gmail.com",
     "rating": 4,
@@ -116,13 +108,12 @@
     "price": 150,
     "feedback": "",
     "Available_seats": 20,
-    "status": "approved",
-    "description": "Learn the basics of cricket, including batting, bowling, and fielding, with instructor Ryan Patel."
+    "status": "approved"
   },
   {
     "class_name": "Multi-Sport Fun",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
-    "number_of_students": 20,
+
     "instructor": "Michelle Anderson",
     "instructor_email": "example@gmail.com",
     "rating": 4.3,
@@ -130,7 +121,6 @@
     "price": 150,
     "feedback": "",
     "Available_seats": 20,
-    "status": "approved",
-    "description": "Experience a variety of fun sports and games with instructor Michelle Anderson."
+    "status": "approved"
   }
 ]

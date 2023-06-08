@@ -1,6 +1,8 @@
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 
+// TODO use  active Active Link
+
 const Dashboard = () => {
   const { user } = useAuth();
   user.role == "instructor";
@@ -46,6 +48,11 @@ const Dashboard = () => {
                 </li>
               </>
             )}
+
+            <div className="divider"></div>
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
           </ul>
         </div>
       </div>

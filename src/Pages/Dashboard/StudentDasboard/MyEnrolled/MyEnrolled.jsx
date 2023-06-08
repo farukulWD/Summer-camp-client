@@ -44,7 +44,7 @@ const MyEnrolled = () => {
                     </div>
                   </td>
                   <td>
-                    <p>${cls.class_name}</p>
+                    <p>{cls.class_name}</p>
                   </td>
                   <td>
                     <p className="text-sm opacity-50">{cls.instructor}</p>

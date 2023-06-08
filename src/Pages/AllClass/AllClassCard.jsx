@@ -13,23 +13,20 @@ const AllClassCard = ({ classData }) => {
       const {
         _id,
         class_name,
-        description,
-        age_group,
-        location,
-        duration,
+
         picture,
         price,
         rating,
         instructor,
+        instructor_email,
       } = selectedClass;
       const selectClass = {
         id: _id,
         class_name,
-        description,
+
         picture,
-        age_group,
-        location,
-        duration,
+        instructor_email,
+
         price,
         rating,
         instructor,
@@ -55,7 +52,7 @@ const AllClassCard = ({ classData }) => {
     Available_seats,
     price,
     picture,
-    number_of_students,
+    totalEnrolled,
     rating,
   } = classData;
 
@@ -77,7 +74,7 @@ const AllClassCard = ({ classData }) => {
         <h3>{instructor}</h3>
         <div className="flex my-5 justify-between items-center">
           <div>
-            <p>Students: {number_of_students}</p>
+            <p>Students: {totalEnrolled}</p>
             <p>Ratings: {rating}</p>
           </div>
           <div>

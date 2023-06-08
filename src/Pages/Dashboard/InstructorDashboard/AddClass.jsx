@@ -1,31 +1,52 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 
+import useAuth from "../../../Hooks/useAuth";
+import axios from "axios";
+import Swal from "sweetalert2";
+const keyImage = import.meta.env.VITE_Image_key;
+const imageHostingUrl = `https://api.imgbb.com/1/upload?key=${keyImage}`;
+// TODO use secure system
 const AddClass = () => {
-  const navigate = useNavigate();
+  const { user } = useAuth();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    // Submit the form data and create a new class in the database
-    // Set the status field to "pending"
-
+    const formData = new FormData();
+    formData.append("image", data.picture[0]);
+    console.log(formData);
     data.feedback = "";
     data.totalEnrolled = 0;
     data.status = "pending";
+    data.rating = 4.6;
     data.price = parseInt(data.price);
     data.available_seats = parseInt(data.available_seats);
-    console.log(data);
-    navigate("/dashboard/myclass");
+
+    axios.post(imageHostingUrl, formData).then((res) => {
+      console.log(res.data.data.display_url);
+      if (res.data.data.display_url) {
+        data.picture = res.data.data.display_url;
+        axios.post("http://localhost:5000/addclasses", data).then((res) => {
+          if (res.data.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Menu Item has been Added",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+      }
+    });
   };
 
-  // Get the display name and email of the logged-in user/instructor
-  const displayName = "John Doe"; // Replace with the actual display name
-  const email = "john.doe@example.com"; // Replace with the actual email
+  const displayName = user?.displayName;
+  const email = user?.email;
+  console.log(keyImage);
 
   return (
     <div className="w-full">
@@ -72,6 +93,7 @@ const AddClass = () => {
               className="border border-gray-300 p-2 w-full"
               value={displayName}
               readOnly
+              {...register("instructor", { required: true })}
             />
           </div>
 
@@ -85,6 +107,7 @@ const AddClass = () => {
               className="border border-gray-300 p-2 w-full"
               value={email}
               readOnly
+              {...register("instructor_email", { required: true })}
             />
           </div>
 
