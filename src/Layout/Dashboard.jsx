@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 
 const Dashboard = () => {
   const { user } = useAuth();
+  user.role == "instructor";
   return (
     <div>
       <div className="drawer lg:drawer-open">
@@ -32,6 +33,16 @@ const Dashboard = () => {
                   <Link to="/dashboard/paymentshistory">
                     My Payments History
                   </Link>
+                </li>
+              </>
+            )}
+            {user && (
+              <>
+                <li>
+                  <Link to="/dashboard/myclass">My Classes</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/enrolled">My Enrolled Classes</Link>
                 </li>
               </>
             )}

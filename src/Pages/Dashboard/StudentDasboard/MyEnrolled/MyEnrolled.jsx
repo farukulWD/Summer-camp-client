@@ -22,7 +22,9 @@ const MyEnrolled = () => {
             <thead>
               <tr>
                 <th>#</th>
-                <th> Class and instructor Name</th>
+                <th>Avatar</th>
+                <th>Class Name</th>
+                <th>Instructor</th>
                 <th>Price</th>
               </tr>
             </thead>
@@ -32,22 +34,20 @@ const MyEnrolled = () => {
                 <tr key={cls._id}>
                   <th>{index + 1}</th>
                   <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img
-                            src={cls.picture}
-                            alt="Avatar Tailwind CSS Component"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div className="font-bold">{cls.class_name}</div>
-                        <div className="text-sm opacity-50">
-                          {cls.instructor}
-                        </div>
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img
+                          src={cls.picture}
+                          alt="Avatar Tailwind CSS Component"
+                        />
                       </div>
                     </div>
+                  </td>
+                  <td>
+                    <p>${cls.class_name}</p>
+                  </td>
+                  <td>
+                    <p className="text-sm opacity-50">{cls.instructor}</p>
                   </td>
                   <td>
                     <p>${cls.price}</p>
