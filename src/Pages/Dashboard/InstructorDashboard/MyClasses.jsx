@@ -4,6 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import Container from "../../../Components/Container";
 import { ImBin } from "react-icons/im";
+import Swal from "sweetalert2";
 
 // TODO cart system
 
@@ -18,12 +19,36 @@ const MyClasses = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await axios(
-        `http://localhost:5000/myclass?email=${"example@gmail.com"}`
+        `http://localhost:5000/myclass?email=${user?.email}`
       );
       return res.data;
     },
   });
   console.log(myClasses);
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to Delete",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`http://localhost:5000/myclass/${id}?email=${user?.email}`)
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your class has been deleted.", "success");
+            }
+            refetch();
+          });
+      }
+    });
+  };
 
   return (
     <div className="w-full h-screen mt-10">
@@ -74,7 +99,7 @@ const MyClasses = () => {
                   </td>
                   <td>
                     {cls.status == "pending" || cls.status == "denied" ? (
-                      ""
+                      <p>OOPS Till now {cls.status} </p>
                     ) : (
                       <p>{cls.totalEnrolled}</p>
                     )}
@@ -92,7 +117,10 @@ const MyClasses = () => {
                   </td>
 
                   <td>
-                    <button className="btn">
+                    <button
+                      onClick={() => handleDelete(cls?._id)}
+                      className="btn"
+                    >
                       <ImBin></ImBin>
                     </button>
                   </td>

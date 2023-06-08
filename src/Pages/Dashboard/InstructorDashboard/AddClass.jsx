@@ -34,7 +34,7 @@ const AddClass = () => {
             Swal.fire({
               position: "top-end",
               icon: "success",
-              title: "Menu Item has been Added",
+              title: "Add Class success",
               showConfirmButton: false,
               timer: 1500,
             });
