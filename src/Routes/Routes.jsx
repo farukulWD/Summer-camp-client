@@ -12,6 +12,7 @@ import PaymentHistory from "../Pages/Dashboard/StudentDasboard/Payments/PaymentH
 import Payments from "../Pages/Dashboard/StudentDasboard/Payments/Payments";
 import MyClasses from "../Pages/Dashboard/InstructorDashboard/MyClasses";
 import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
+import Update from "../Pages/Dashboard/InstructorDashboard/Update";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: "addclass",
         element: <AddClass></AddClass>,
+      },
+      {
+        path: "update/:id",
+        element: <Update></Update>,
       },
     ],
   },

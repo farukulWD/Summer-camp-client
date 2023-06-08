@@ -125,7 +125,10 @@ const MyClasses = () => {
                     </button>
                   </td>
                   <td>
-                    <Link className="btn"> Update</Link>
+                    <Link to={`/dashboard/update/${cls?._id}`} className="btn">
+                      {" "}
+                      Update
+                    </Link>
                   </td>
                 </tr>
               ))}
