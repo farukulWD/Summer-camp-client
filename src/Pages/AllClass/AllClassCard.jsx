@@ -22,29 +22,28 @@ const AllClassCard = ({ classData }) => {
         rating,
         instructor,
       } = selectedClass;
-      axios
-        .post("http://localhost:5000/selected", {
-          id: _id,
-          class_name,
-          description,
-          picture,
-          age_group,
-          location,
-          duration,
-          price,
-          rating,
-          instructor,
-          studentName: user.displayName,
-          studentEmail: user.email,
-        })
-        .then((res) => {
-          if (res.data.insertedId) {
-            Swal.fire({
-              icon: "success",
-              title: "Selected Success",
-            });
-          }
-        });
+      const selectClass = {
+        id: _id,
+        class_name,
+        description,
+        picture,
+        age_group,
+        location,
+        duration,
+        price,
+        rating,
+        instructor,
+        studentName: user.displayName,
+        studentEmail: user.email,
+      };
+      axios.post("http://localhost:5000/selected", selectClass).then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Selected Success",
+          });
+        }
+      });
     } else {
       console.log("please login");
     }

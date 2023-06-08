@@ -28,6 +28,11 @@ const Dashboard = () => {
                 <li>
                   <Link to="/dashboard/enrolled">My Enrolled Classes</Link>
                 </li>
+                <li>
+                  <Link to="/dashboard/paymentshistory">
+                    My Payments History
+                  </Link>
+                </li>
               </>
             )}
           </ul>

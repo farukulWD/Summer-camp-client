@@ -1,35 +1,19 @@
 [
   {
-    "_id": "4124588764548",
-
     "class_name": "Soccer Training",
     "picture": "https://i.ibb.co/KwYckhj/Youth-Soccer-Training-1024x536.jpg",
     "number_of_students": 15,
     "instructor": "John Smith",
-    "duration": "1 hour",
-    "location": "Field A",
+    "instructor_email": "example@gmail.com",
+
     "rating": 4.5,
     "price": 150,
     "Available_seats": 0,
-    "age_group": "8-12",
+
     "description": "Learn fundamental soccer skills and strategies with experienced instructor John Smith.",
-    "schedule": [
-      {
-        "day": "Monday",
-        "time": "10:00 AM - 11:00 AM"
-      },
-      {
-        "day": "Wednesday",
-        "time": "10:00 AM - 11:00 AM"
-      },
-      {
-        "day": "Friday",
-        "time": "10:00 AM - 11:00 AM"
-      }
-    ]
+    "status": "approved"
   },
   {
-    "_id": "0124588764548",
     "class_name": "Basketball Skills",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 12,
@@ -37,207 +21,98 @@
     "price": 150,
     "Available_seats": 20,
     "instructor": "Emily Johnson",
-    "duration": "1.5 hours",
-    "location": "Gymnasium B",
-    "age_group": "10-14",
+    "instructor_email": "example@gmail.com",
+
     "description": "Improve your basketball skills and teamwork under the guidance of instructor Emily Johnson.",
-    "schedule": [
-      {
-        "day": "Tuesday",
-        "time": "3:30 PM - 5:00 PM"
-      },
-      {
-        "day": "Thursday",
-        "time": "3:30 PM - 5:00 PM"
-      }
-    ]
+    "status": "approved"
   },
   {
-    "_id": "5124588764548",
     "class_name": "Swimming Lessons",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 8,
     "instructor": "Sarah Thompson",
+    "instructor_email": "example@gmail.com",
     "Available_seats": 0,
     "rating": 5,
     "price": 150,
-    "duration": "45 minutes",
-    "location": "Indoor Pool",
-    "age_group": "6-10",
+
     "description": "Learn to swim and improve your technique with skilled instructor Sarah Thompson.",
-    "schedule": [
-      {
-        "day": "Monday",
-        "time": "2:00 PM - 2:45 PM"
-      },
-      {
-        "day": "Wednesday",
-        "time": "2:00 PM - 2:45 PM"
-      },
-      {
-        "day": "Friday",
-        "time": "2:00 PM - 2:45 PM"
-      }
-    ]
+    "status": "approved"
   },
   {
-    "_id": "8124588764548",
     "class_name": "Tennis Clinic",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 10,
     "instructor": "David Wilson",
-    "duration": "1 hour",
+    "instructor_email": "example@gmail.com",
+
     "rating": 4.5,
     "price": 150,
     "Available_seats": 0,
-    "location": "Tennis Court 1",
-    "age_group": "8-14",
+
     "description": "Join our tennis clinic to learn or enhance your tennis skills with instructor David Wilson.",
-    "schedule": [
-      {
-        "day": "Tuesday",
-        "time": "9:00 AM - 10:00 AM"
-      },
-      {
-        "day": "Thursday",
-        "time": "9:00 AM - 10:00 AM"
-      },
-      {
-        "day": "Saturday",
-        "time": "9:00 AM - 10:00 AM"
-      }
-    ]
+    "status": "approved"
   },
   {
-    "_id": "9124588764548",
     "class_name": "Gymnastics Fundamentals",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 15,
     "instructor": "Alexa Rodriguez",
-    "duration": "1.5 hours",
+    "instructor_email": "example@gmail.com",
+    "status": "approved",
     "rating": 5,
     "price": 150,
     "Available_seats": 20,
-    "location": "Gymnastics Studio",
-    "age_group": "6-12",
-    "description": "Learn basic gymnastics skills, balance, and flexibility with instructor Alexa Rodriguez.",
-    "schedule": [
-      {
-        "day": "Monday",
-        "time": "4:30 PM - 6:00 PM"
-      },
-      {
-        "day": "Wednesday",
-        "time": "4:30 PM - 6:00 PM"
-      },
-      {
-        "day": "Friday",
-        "time": "4:30 PM - 6:00 PM"
-      }
-    ]
+
+    "description": "Learn basic gymnastics skills, balance, and flexibility with instructor Alexa Rodriguez."
   },
   {
-    "_id": "5124588764548",
     "class_name": "Athletics Training",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 20,
     "instructor": "Michael Davis",
-    "duration": "2 hours",
+    "instructor_email": "example@gmail.com",
+
     "rating": 4.8,
     "price": 150,
     "Available_seats": 20,
-    "location": "Track and Field",
-    "age_group": "12-16",
-    "description": "Train in various track and field events and improve your athletic abilities with instructor Michael Davis.",
-    "schedule": [
-      {
-        "day": "Tuesday",
-        "time": "5:00 PM - 7:00 PM"
-      },
-      {
-        "day": "Thursday",
-        "time": "5:00 PM - 7:00 PM"
-      }
-    ]
+    "status": "approved",
+    "description": "Train in various track and field events and improve your athletic abilities with instructor Michael Davis."
   },
   {
-    "_id": "85124588764548",
     "class_name": "Volleyball Skills",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 10,
     "instructor": "Jessica Thompson",
+    "instructor_email": "example@gmail.com",
     "rating": 5,
     "price": 150,
     "Available_seats": 20,
-    "duration": "1.5 hours",
-    "location": "Sports Hall",
-    "age_group": "10-14",
-    "description": "Enhance your volleyball skills, including serving, passing, and spiking, with instructor Jessica Thompson.",
-    "schedule": [
-      {
-        "day": "Monday",
-        "time": "3:00 PM - 4:30 PM"
-      },
-      {
-        "day": "Wednesday",
-        "time": "3:00 PM - 4:30 PM"
-      },
-      {
-        "day": "Friday",
-        "time": "3:00 PM - 4:30 PM"
-      }
-    ]
+    "status": "approved",
+    "description": "Enhance your volleyball skills, including serving, passing, and spiking, with instructor Jessica Thompson."
   },
   {
-    "_id": "8124578764548",
     "class_name": "Cricket Basics",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 12,
     "instructor": "Ryan Patel",
+    "instructor_email": "example@gmail.com",
     "rating": 4,
     "price": 150,
     "Available_seats": 20,
-    "duration": "1.5 hours",
-    "location": "Cricket Ground",
-    "age_group": "8-12",
-    "description": "Learn the basics of cricket, including batting, bowling, and fielding, with instructor Ryan Patel.",
-    "schedule": [
-      {
-        "day": "Tuesday",
-        "time": "2:30 PM - 4:00 PM"
-      },
-      {
-        "day": "Thursday",
-        "time": "2:30 PM - 4:00 PM"
-      }
-    ]
+    "status": "approved",
+    "description": "Learn the basics of cricket, including batting, bowling, and fielding, with instructor Ryan Patel."
   },
   {
-    "_id": "8724588764548",
     "class_name": "Multi-Sport Fun",
     "picture": "https://i.ibb.co/f1t8nwn/jules-showing-drills.jpg",
     "number_of_students": 20,
     "instructor": "Michelle Anderson",
+    "instructor_email": "example@gmail.com",
     "rating": 4.3,
     "price": 150,
     "Available_seats": 20,
-    "duration": "2 hours",
-    "location": "Sports Complex",
-    "age_group": "6-10",
-    "description": "Experience a variety of fun sports and games with instructor Michelle Anderson.",
-    "schedule": [
-      {
-        "day": "Monday",
-        "time": "1:00 PM - 3:00 PM"
-      },
-      {
-        "day": "Wednesday",
-        "time": "1:00 PM - 3:00 PM"
-      },
-      {
-        "day": "Friday",
-        "time": "1:00 PM - 3:00 PM"
-      }
-    ]
+    "status": "approved",
+    "description": "Experience a variety of fun sports and games with instructor Michelle Anderson."
   }
 ]
