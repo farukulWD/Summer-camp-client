@@ -6,17 +6,14 @@ const PopularInstructor = () => {
   const [instructor, setInstructor] = useState([]);
 
   useEffect(() => {
-    fetch("PopularInstructor.json")
+    fetch("http://localhost:5000/allInstructor")
       .then((res) => res.json())
       .then((data) => {
         setInstructor(data);
       });
   }, []);
-  const sortedClasses = instructor.sort(
-    (a, b) => b.number_of_students - a.number_of_students
-  );
 
-  const topInstructor = sortedClasses.slice(0, 6);
+  const topInstructor = instructor.slice(0, 6);
 
   return (
     <div>

@@ -8,7 +8,7 @@ import bannerimg from "../../assets/download.jpeg";
 const Instructor = () => {
   const [instructors, setInstructors] = useState([]);
   useEffect(() => {
-    axios.get("PopularInstructor.json").then((res) => {
+    axios.get("http://localhost:5000/allInstructor").then((res) => {
       setInstructors(res.data);
     });
   }, []);
