@@ -6,13 +6,9 @@ const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
   // TODO use axios or Query
 
-  const sortedClasses = classes.sort(
-    (a, b) => b.number_of_students - a.number_of_students
-  );
-
-  const topClasses = sortedClasses.slice(0, 6);
+  const topClasses = classes.slice(0, 6);
   useEffect(() => {
-    fetch("http://localhost:5000/allClass")
+    fetch("http://localhost:5000/allApprovedClass")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

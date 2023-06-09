@@ -9,7 +9,7 @@ const Dashboard = () => {
   const { user } = useAuth();
   const [isAdmin, isAdminLoading] = useAdmin();
   const [isInstructor, isInstructorLoading] = useInstructor();
-  console.log(isInstructor);
+
   return (
     <div>
       <div className="drawer lg:drawer-open">
@@ -27,7 +27,22 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bgPrimary text-white ">
             {/* Sidebar content here */}
-            {user && !isAdmin && !isInstructor && (
+
+            {isAdmin && user && (
+              <>
+                <li>
+                  <Link to="/dashboard/manageusers">Manage Users</Link>
+                </li>
+              </>
+            )}
+            {isInstructor && user && (
+              <>
+                <li>
+                  <Link to="/dashboard/myclass">My Classes</Link>
+                </li>
+              </>
+            )}
+            {!isAdmin && !isInstructor && user && (
               <>
                 <li>
                   <Link to="/dashboard/selectedclass">My Selected Classes</Link>
@@ -42,15 +57,8 @@ const Dashboard = () => {
                 </li>
               </>
             )}
-            {user && isInstructor && (
-              <>
-                <li>
-                  <Link to="/dashboard/myclass">My Classes</Link>
-                </li>
-              </>
-            )}
 
-            <div className="divider"></div>
+            <div className="divider border-red-400"></div>
             <li>
               <Link to={"/"}>Home</Link>
             </li>

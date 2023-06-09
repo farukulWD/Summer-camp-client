@@ -14,6 +14,7 @@ import MyClasses from "../Pages/Dashboard/InstructorDashboard/MyClasses";
 import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
 import Update from "../Pages/Dashboard/InstructorDashboard/Update";
 import PrivetRoutes from "./PrivetRoutes";
+import ManageUser from "../Pages/Dashboard/AdminDashboard/ManageUser";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,14 @@ const router = createBrowserRouter([
       {
         path: "update/:id",
         element: <Update></Update>,
+      },
+      {
+        path: "manageusers",
+        element: (
+          <PrivetRoutes>
+            <ManageUser></ManageUser>
+          </PrivetRoutes>
+        ),
       },
     ],
   },
