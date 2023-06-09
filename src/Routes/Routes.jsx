@@ -13,6 +13,7 @@ import Payments from "../Pages/Dashboard/StudentDasboard/Payments/Payments";
 import MyClasses from "../Pages/Dashboard/InstructorDashboard/MyClasses";
 import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
 import Update from "../Pages/Dashboard/InstructorDashboard/Update";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivetRoutes>
+        <Dashboard></Dashboard>
+      </PrivetRoutes>
+    ),
     children: [
       {
         path: "selectedclass",

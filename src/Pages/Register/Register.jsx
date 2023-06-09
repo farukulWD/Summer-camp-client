@@ -3,10 +3,13 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../Components/GoogleLogin";
 
 const Register = () => {
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   const { createUserWithEmail, updateUserProfile } = useAuth();
   const navigate = useNavigate();
   const {
@@ -43,7 +46,7 @@ const Register = () => {
                     title: "Sign UP Success",
                   });
                   reset();
-                  navigate("/");
+                  navigate(from);
                 }
               });
           })

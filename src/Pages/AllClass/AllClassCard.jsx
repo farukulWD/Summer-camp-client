@@ -1,12 +1,15 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const AllClassCard = ({ classData }) => {
   const { user, loading } = useAuth();
   if (loading) {
     return <p>loading.....</p>;
   }
+
+  const navigate = useNavigate();
 
   const handleSelect = (selectedClass) => {
     if (user && user?.email) {
@@ -42,7 +45,7 @@ const AllClassCard = ({ classData }) => {
         }
       });
     } else {
-      console.log("please login");
+      navigate("/login");
     }
   };
 
@@ -57,7 +60,7 @@ const AllClassCard = ({ classData }) => {
   } = classData;
 
   const buttonClass =
-    Available_seats === 0 || user.role == "admin"
+    Available_seats === 0 || user?.role == "admin"
       ? "btn text-white btnDisabled"
       : "btnPrimary";
   const cardClass =

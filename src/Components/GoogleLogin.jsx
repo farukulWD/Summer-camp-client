@@ -2,11 +2,16 @@ import { FaGoogle } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
   const { googleLogin } = useAuth();
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
   const handleLogin = () => {
     googleLogin()
       .then((result) => {
@@ -26,7 +31,7 @@ const GoogleLogin = () => {
                 title: "Login Success",
               });
 
-              navigate("/");
+              navigate(from);
             }
           });
       })
