@@ -3,10 +3,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useSecure from "../../../../Hooks/useSecure";
 
 // TODO use secure systems
 
 const Checkout = ({ price, classData, isLoading }) => {
+  const [axiosSecure] = useSecure();
   const {
     _id,
     classId,
@@ -18,7 +20,6 @@ const Checkout = ({ price, classData, isLoading }) => {
     instructor,
   } = classData || {};
 
-  console.log(classId);
   const stripe = useStripe();
   const element = useElements();
   const { user } = useAuth();
@@ -26,14 +27,12 @@ const Checkout = ({ price, classData, isLoading }) => {
   const [processing, setProcessing] = useState(false);
   const [clientSecret, setClientSecret] = useState("");
   const [cardError, setCardError] = useState("");
-  console.log(price, classData);
+
   useEffect(() => {
     if (price > 0) {
-      axios
-        .post("http://localhost:5000/createIntent", { price })
-        .then((res) => {
-          setClientSecret(res.data.clientSecret);
-        });
+      axiosSecure.post("/createIntent", { price }).then((res) => {
+        setClientSecret(res.data.clientSecret);
+      });
     }
   }, [price]);
   const handlePayment = async (event) => {
@@ -56,7 +55,6 @@ const Checkout = ({ price, classData, isLoading }) => {
       setCardError(error.message);
     } else {
       setCardError("");
-      console.log("[PaymentMethod]", paymentMethod);
     }
     setProcessing(true);
     const { paymentIntent, error: confirmError } =
@@ -89,20 +87,17 @@ const Checkout = ({ price, classData, isLoading }) => {
         price,
         date: new Date(),
       };
-      axios
-        .post(`http://localhost:5000/payments?classId=${classId}`, payment)
-        .then((res) => {
-          console.log(res.data);
-          if (res.data.insertResult.insertedId) {
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Your order has been successful",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          }
-        });
+      axiosSecure.post(`/payments?classId=${classId}`, payment).then((res) => {
+        if (res.data.insertResult.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your order has been successful",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
     }
   };
   return (

@@ -1,30 +1,24 @@
-import axios from "axios";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import Container from "../../../Components/Container";
 import { ImBin } from "react-icons/im";
 import Swal from "sweetalert2";
+import useSecure from "../../../Hooks/useSecure";
 
 // TODO cart system
 
 const MyClasses = () => {
+  const [axiosSecure] = useSecure();
   const { user, loading } = useAuth();
-  const {
-    isLoading,
-    refetch,
-    data: myClasses = [],
-  } = useQuery({
+  const { refetch, data: myClasses = [] } = useQuery({
     queryKey: ["myClass", user?.email],
     enabled: !loading,
     queryFn: async () => {
-      const res = await axios(
-        `http://localhost:5000/myclass?email=${user?.email}`
-      );
+      const res = await axiosSecure.get(`/myclass?email=${user?.email}`);
       return res.data;
     },
   });
-  console.log(myClasses);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -37,10 +31,9 @@ const MyClasses = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios
-          .delete(`http://localhost:5000/myclass/${id}?email=${user?.email}`)
+        axiosSecure
+          .delete(`/myclass/${id}?email=${user?.email}`)
           .then((res) => {
-            console.log(res.data);
             if (res.data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your class has been deleted.", "success");
             }

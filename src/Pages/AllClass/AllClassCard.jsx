@@ -1,12 +1,12 @@
-import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import useSecure from "../../Hooks/useSecure";
 
 const AllClassCard = ({ classData }) => {
+  const [axiosSecure] = useSecure();
   const { user, loading } = useAuth();
-  if (loading) {
-    return <p>loading.....</p>;
-  }
+  const navigate = useNavigate();
 
   const handleSelect = (selectedClass) => {
     if (user && user?.email) {
@@ -30,7 +30,7 @@ const AllClassCard = ({ classData }) => {
         studentName: user.displayName,
         studentEmail: user.email,
       };
-      axios.post("http://localhost:5000/selected", selectClass).then((res) => {
+      axiosSecure.post("/selected", selectClass).then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
             icon: "success",

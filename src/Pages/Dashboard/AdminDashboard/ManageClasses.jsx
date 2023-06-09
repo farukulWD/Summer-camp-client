@@ -1,19 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-
-import { Link } from "react-router-dom";
 import Container from "../../../Components/Container";
 import { useState } from "react";
 import FeedbackModal from "./FeedbackModal";
 import Swal from "sweetalert2";
+import useSecure from "../../../Hooks/useSecure";
 
 const ManageClasses = () => {
+  const [axiosSecure] = useSecure();
   const [showModal, setShowModal] = useState(false);
   const [classId, setClassId] = useState(null);
   const { data: allClass, refetch } = useQuery({
     queryKey: ["allClasses"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/allClass");
+      const res = await axiosSecure.get("/allClass");
       return res.data;
     },
   });
@@ -28,7 +27,7 @@ const ManageClasses = () => {
     : {};
 
   const makeApproved = (id) => {
-    axios.patch(`http://localhost:5000/allClass/approved/${id}`).then((res) => {
+    axiosSecure.patch(`/allClass/approved/${id}`).then((res) => {
       if (res.data.modifiedCount) {
         Swal.fire({
           position: "top-end",
@@ -53,7 +52,7 @@ const ManageClasses = () => {
   };
 
   const makeDeny = (id) => {
-    axios.patch(`http://localhost:5000/allClass/denied/${id}`).then((res) => {
+    axiosSecure.patch(`/allClass/denied/${id}`).then((res) => {
       if (res.data.modifiedCount) {
         Swal.fire({
           position: "top-end",

@@ -23,12 +23,10 @@ const Register = () => {
   password.current = watch("password", "");
 
   const onSubmit = (data) => {
-    console.log(data);
     const { email, password, name, photoUrl } = data;
 
     createUserWithEmail(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         updateUserProfile(name, photoUrl)
           .then(() => {
             // const savedUser = ;
@@ -50,9 +48,9 @@ const Register = () => {
                 }
               });
           })
-          .catch((err) => console.log(err));
+          .catch(() => {});
       })
-      .catch((err) => console.log(err.message));
+      .catch(() => {});
   };
 
   return (

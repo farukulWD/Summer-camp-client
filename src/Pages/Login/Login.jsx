@@ -20,13 +20,10 @@ const Login = () => {
   const onSubmit = (data) => {
     const { email, password } = data;
     Login(email, password)
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         navigate(from);
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+      .catch(() => {});
   };
 
   return (

@@ -1,34 +1,33 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useSecure from "../../../Hooks/useSecure";
 
 const ManageUser = () => {
   const { loading } = useAuth();
+  const [axiosSecure] = useSecure();
   const { data: users, refetch } = useQuery({
-    queryKey: "users",
+    queryKey: ["users"],
     enabled: !loading,
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/users");
+      const res = await axiosSecure.get("/users");
       return res.data;
     },
   });
 
   const makeAdmin = (user) => {
-    axios
-      .patch(`http://localhost:5000/users/admin/${user?._id}`)
-      .then((res) => {
-        if (res.data.modifiedCount) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `${user.name} is Admin now`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          refetch();
-        }
-      });
+    axiosSecure.patch(`/users/admin/${user?._id}`).then((res) => {
+      if (res.data.modifiedCount) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: `${user.name} is Admin now`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        refetch();
+      }
+    });
   };
   const makeInstructor = (user) => {
     const instructor = {
@@ -36,24 +35,26 @@ const ManageUser = () => {
       number_of_students: 0,
       number_of_classes: 0,
       ratings: 4.8,
-      picture: user?.image,
+      picture: user?.picture,
       email: user?.email,
     };
-
-    axios
-      .patch(`http://localhost:5000/users/instructor/${user?._id}`, instructor)
-      .then((res) => {
-        if (res.data.modifiedCount) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `${user.name} is Instructor now`,
-            showConfirmButton: false,
-            timer: 1500,
+    axiosSecure.patch(`/users/instructor/${user?._id}`).then((res) => {
+      if (res.data.modifiedCount) {
+        axiosSecure
+          .post(`/adInstructor?email=${user?.email}`, instructor)
+          .then((res) => {
+            console.log(res.data);
           });
-          refetch();
-        }
-      });
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: `${user.name} is Instructor now`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        refetch();
+      }
+    });
   };
 
   return (
@@ -121,3 +122,16 @@ const ManageUser = () => {
 };
 
 export default ManageUser;
+
+/***********
+ * 
+ * const instructor = {
+      name: user?.name,
+      number_of_students: 0,
+      number_of_classes: 0,
+      ratings: 4.8,
+      picture: user?.image,
+      email: user?.email,
+    };
+ * 
+ */

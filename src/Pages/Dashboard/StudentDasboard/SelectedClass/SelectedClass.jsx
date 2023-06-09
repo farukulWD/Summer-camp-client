@@ -4,19 +4,19 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
 import Container from "../../../../Components/Container";
+import useSecure from "../../../../Hooks/useSecure";
 
 // TODO add payments methods and delete action
 
 const SelectedClass = () => {
+  const [axiosSecure] = useSecure();
   const { user } = useAuth();
 
   const { data: selectedClasses = [], refetch } = useQuery({
     queryKey: ["selected"],
     queryFn: async () => {
-      const res = await fetch(
-        `http://localhost:5000/selectedClass?email=${user?.email}`
-      );
-      return res.json();
+      const res = await axiosSecure.get(`/selectedClass?email=${user?.email}`);
+      return res.data;
     },
   });
   const handleDelete = (id) => {
@@ -30,14 +30,12 @@ const SelectedClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios
-          .delete(`http://localhost:5000/selectedDelete/${id}`)
-          .then((res) => {
-            if (res.data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your class has been deleted.", "success");
-            }
-            refetch();
-          });
+        axiosSecure.delete(`/selectedDelete/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            Swal.fire("Deleted!", "Your class has been deleted.", "success");
+          }
+          refetch();
+        });
       }
     });
   };

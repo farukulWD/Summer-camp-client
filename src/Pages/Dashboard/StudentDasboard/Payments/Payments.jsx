@@ -4,32 +4,26 @@ import Checkout from "./Checkout";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../../Hooks/useAuth";
-import { useState } from "react";
+import useSecure from "../../../../Hooks/useSecure";
 
 const stripePromise = loadStripe(import.meta.env.VITE_pk_stripe);
 
 const Payments = () => {
+  const [axiosSecure] = useSecure();
   const { user } = useAuth();
   const { id } = useParams();
-  console.log(user);
-  const {
-    data: classes = [],
-    refetch,
-    isLoading,
-  } = useQuery({
+
+  const { data: classes = [], isLoading } = useQuery({
     queryKey: ["selected"],
     queryFn: async () => {
-      const res = await fetch(
-        `http://localhost:5000/selectedClass?email=${user?.email}`
-      );
-      return res.json();
+      const res = await axiosSecure.get(`/selectedClass?email=${user?.email}`);
+      return res.data;
     },
   });
   const selectClass = classes.find((cl) => cl._id == id);
-  console.log(selectClass, classes);
 
   const price = selectClass?.price || 0;
-  console.log(price);
+
   return (
     <div className="w-full">
       {isLoading ? <p>Loading......</p> : null}

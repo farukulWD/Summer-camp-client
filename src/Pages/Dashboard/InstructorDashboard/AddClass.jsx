@@ -3,21 +3,24 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useSecure from "../../../Hooks/useSecure";
 const keyImage = import.meta.env.VITE_Image_key;
 const imageHostingUrl = `https://api.imgbb.com/1/upload?key=${keyImage}`;
 // TODO use secure system
 const AddClass = () => {
+  const [axiosSecure] = useSecure();
   const { user } = useAuth();
   const {
     register,
     handleSubmit,
+
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     const formData = new FormData();
     formData.append("image", data.picture[0]);
-    console.log(formData);
+
     data.feedback = "";
     data.totalEnrolled = 0;
     data.status = "pending";
@@ -26,10 +29,9 @@ const AddClass = () => {
     data.available_seats = parseInt(data.available_seats);
 
     axios.post(imageHostingUrl, formData).then((res) => {
-      console.log(res.data.data.display_url);
       if (res.data.data.display_url) {
         data.picture = res.data.data.display_url;
-        axios.post("http://localhost:5000/addclasses", data).then((res) => {
+        axiosSecure.post("/addclasses", data).then((res) => {
           if (res.data.insertedId) {
             Swal.fire({
               position: "top-end",
@@ -46,7 +48,6 @@ const AddClass = () => {
 
   const displayName = user?.displayName;
   const email = user?.email;
-  console.log(keyImage);
 
   return (
     <div className="w-full">

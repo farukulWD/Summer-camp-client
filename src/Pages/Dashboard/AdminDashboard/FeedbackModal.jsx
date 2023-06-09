@@ -1,18 +1,13 @@
-import axios from "axios";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
+import useSecure from "../../../Hooks/useSecure";
 
 const FeedbackModal = ({ onClose, showFeedbackSuccess, id }) => {
+  const [axiosSecure] = useSecure();
   const { register, handleSubmit } = useForm();
-
   const onSubmit = (data) => {
-    console.log(data.feedback, id);
     onClose();
-
-    axios
-      .patch(
-        `http://localhost:5000/allClass/feedback/${id}?feedback=${data.feedback}`
-      )
+    axiosSecure
+      .patch(`/allClass/feedback/${id}?feedback=${data.feedback}`)
       .then((res) => {
         if (res.data.modifiedCount) {
           showFeedbackSuccess();

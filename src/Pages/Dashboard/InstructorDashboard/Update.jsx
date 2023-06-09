@@ -3,12 +3,16 @@ import useAuth from "../../../Hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import useSecure from "../../../Hooks/useSecure";
 
 const Update = () => {
-  const { user } = useAuth();
   const { id } = useParams();
+  const [axiosSecure] = useSecure();
+  const { user } = useAuth();
+
   const {
     register,
+
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -16,15 +20,17 @@ const Update = () => {
   const { data: myClass = {} } = useQuery({
     queryKey: ["classData"],
     queryFn: async () => {
-      const res = await axios(
-        `http://localhost:5000/myclass/${id}?email=${user?.email}`
-      );
+      const res = await axiosSecure(`/myclass/${id}?email=${user?.email}`);
       return res.data;
     },
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const { class_name, picture, available_seats, price } = data;
+
+    axiosSecure.patch(`/update/class/${id}`, data).then((res) => {
+      console.log(res.data);
+    });
   };
 
   //  TODO work Update

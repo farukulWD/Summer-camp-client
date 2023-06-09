@@ -15,7 +15,6 @@ const GoogleLogin = () => {
   const handleLogin = () => {
     googleLogin()
       .then((result) => {
-        console.log(result.user);
         const { displayName, email } = result.user;
         axios
           .post("http://localhost:5000/users", {
@@ -35,9 +34,7 @@ const GoogleLogin = () => {
             }
           });
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+      .catch(() => {});
   };
   return (
     <div className="my-4">
