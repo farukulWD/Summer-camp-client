@@ -1,11 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import useAdmin from "../Hooks/useAdmin";
+import useInstructor from "../Hooks/useInstructor";
 
 // TODO use  active Active Link
 
 const Dashboard = () => {
   const { user } = useAuth();
-  user.role == "instructor";
+  const [isAdmin, isAdminLoading] = useAdmin();
+  const [isInstructor, isInstructorLoading] = useInstructor();
+  console.log(isInstructor);
   return (
     <div>
       <div className="drawer lg:drawer-open">
@@ -23,7 +27,7 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bgPrimary text-white ">
             {/* Sidebar content here */}
-            {user && (
+            {user && !isAdmin && !isInstructor && (
               <>
                 <li>
                   <Link to="/dashboard/selectedclass">My Selected Classes</Link>
@@ -38,13 +42,10 @@ const Dashboard = () => {
                 </li>
               </>
             )}
-            {user && (
+            {user && isInstructor && (
               <>
                 <li>
                   <Link to="/dashboard/myclass">My Classes</Link>
-                </li>
-                <li>
-                  <Link to="/dashboard/enrolled">My Enrolled Classes</Link>
                 </li>
               </>
             )}

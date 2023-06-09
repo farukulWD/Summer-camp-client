@@ -3,12 +3,12 @@ import useAuth from "../Hooks/useAuth";
 import RingLoader from "react-spinners/RingLoader";
 
 const PrivetRoutes = ({ children }) => {
-  const { user, loader } = useAuth();
+  const { user, loading } = useAuth();
   const location = useLocation();
 
-  if (loader) {
+  if (loading) {
     return (
-      <div>
+      <div className="fixed top-[50%] left-[50%]">
         <RingLoader color="#008e48" loading size={91} speedMultiplier={2} />
       </div>
     );
