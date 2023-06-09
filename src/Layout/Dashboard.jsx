@@ -33,6 +33,9 @@ const Dashboard = () => {
                 <li>
                   <Link to="/dashboard/manageusers">Manage Users</Link>
                 </li>
+                <li>
+                  <Link to="/dashboard/manageclasses">Manage Classes</Link>
+                </li>
               </>
             )}
             {isInstructor && user && (

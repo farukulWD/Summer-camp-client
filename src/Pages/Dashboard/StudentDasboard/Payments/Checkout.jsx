@@ -7,8 +7,18 @@ import Swal from "sweetalert2";
 // TODO use secure systems
 
 const Checkout = ({ price, classData, isLoading }) => {
-  const { _id, class_name, description, picture, rating, instructor } =
-    classData || {};
+  const {
+    _id,
+    classId,
+    instructor_email,
+    class_name,
+    description,
+    picture,
+    rating,
+    instructor,
+  } = classData || {};
+
+  console.log(classId);
   const stripe = useStripe();
   const element = useElements();
   const { user } = useAuth();
@@ -22,7 +32,6 @@ const Checkout = ({ price, classData, isLoading }) => {
       axios
         .post("http://localhost:5000/createIntent", { price })
         .then((res) => {
-          console.log(res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
         });
     }
@@ -75,22 +84,25 @@ const Checkout = ({ price, classData, isLoading }) => {
         picture,
         rating,
         instructor,
+        instructor_email,
         transactionId: paymentIntent.id,
         price,
         date: new Date(),
       };
-      axios.post("http://localhost:5000/payments", payment).then((res) => {
-        console.log(res.data);
-        if (res.data.insertResult.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Your order has been successful",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
+      axios
+        .post(`http://localhost:5000/payments?classId=${classId}`, payment)
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.insertResult.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Your order has been successful",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
     }
   };
   return (

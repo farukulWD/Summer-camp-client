@@ -35,7 +35,7 @@ const Register = () => {
             axios
               .post("http://localhost:5000/users", {
                 name: name,
-
+                picture: photoUrl,
                 email: email,
                 role: "student",
               })

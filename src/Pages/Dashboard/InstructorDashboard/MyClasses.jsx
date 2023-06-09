@@ -69,7 +69,9 @@ const MyClasses = () => {
                 <th>Instructor</th>
                 <th>Price</th>
                 <th>Total Enrolled</th>
+                <th>Available seats</th>
                 <th>Status</th>
+                <th>Feedback</th>
                 <th>Action</th>
                 <th>Update</th>
               </tr>
@@ -105,15 +107,13 @@ const MyClasses = () => {
                     )}
                   </td>
                   <td>
+                    <p>{cls.available_seats}</p>
+                  </td>
+                  <td>
                     <p>{cls.status}</p>
-                    {cls.status == "denied" && (
-                      <p>
-                        <span className="font-bold text-warning">
-                          Feedback:
-                        </span>{" "}
-                        {cls.feedback}
-                      </p>
-                    )}
+                  </td>
+                  <td>
+                    <p>{cls.feedback}</p>
                   </td>
 
                   <td>

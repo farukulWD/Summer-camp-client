@@ -1,7 +1,6 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
-import { useNavigate } from "react-router-dom";
 
 const AllClassCard = ({ classData }) => {
   const { user, loading } = useAuth();
@@ -9,14 +8,11 @@ const AllClassCard = ({ classData }) => {
     return <p>loading.....</p>;
   }
 
-  const navigate = useNavigate();
-
   const handleSelect = (selectedClass) => {
     if (user && user?.email) {
       const {
         _id,
         class_name,
-
         picture,
         price,
         rating,
@@ -24,12 +20,10 @@ const AllClassCard = ({ classData }) => {
         instructor_email,
       } = selectedClass;
       const selectClass = {
-        id: _id,
+        classId: _id,
         class_name,
-
         picture,
         instructor_email,
-
         price,
         rating,
         instructor,
@@ -52,7 +46,7 @@ const AllClassCard = ({ classData }) => {
   const {
     class_name,
     instructor,
-    Available_seats,
+    available_seats,
     price,
     picture,
     totalEnrolled,
@@ -60,11 +54,11 @@ const AllClassCard = ({ classData }) => {
   } = classData;
 
   const buttonClass =
-    Available_seats === 0 || user?.role == "admin"
+    available_seats === 0 || user?.role == "admin"
       ? "btn text-white btnDisabled"
       : "btnPrimary";
   const cardClass =
-    Available_seats === 0
+    available_seats === 0
       ? "card bg-red-500 hover:shadow-xl"
       : "card bg-base-100 hover:shadow-xl";
   return (
@@ -81,7 +75,7 @@ const AllClassCard = ({ classData }) => {
             <p>Ratings: {rating}</p>
           </div>
           <div>
-            <p>Seats: {Available_seats}</p>
+            <p>Seats: {available_seats}</p>
             <p>Price: ${price}</p>
           </div>
         </div>
@@ -89,7 +83,7 @@ const AllClassCard = ({ classData }) => {
           <button
             className={buttonClass}
             onClick={() => handleSelect(classData)}
-            disabled={Available_seats === 0}
+            disabled={available_seats === 0}
           >
             Select Class
           </button>

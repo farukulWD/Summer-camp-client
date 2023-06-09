@@ -31,8 +31,17 @@ const ManageUser = () => {
       });
   };
   const makeInstructor = (user) => {
+    const instructor = {
+      name: user?.name,
+      number_of_students: 0,
+      number_of_classes: 0,
+      ratings: 4.8,
+      picture: user?.image,
+      email: user?.email,
+    };
+
     axios
-      .patch(`http://localhost:5000/users/instructor/${user?._id}`)
+      .patch(`http://localhost:5000/users/instructor/${user?._id}`, instructor)
       .then((res) => {
         if (res.data.modifiedCount) {
           Swal.fire({
