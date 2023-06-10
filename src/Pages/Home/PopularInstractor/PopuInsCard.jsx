@@ -1,16 +1,33 @@
+import { FaFacebook, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 const PopuInsCard = ({ pInstructor }) => {
-  const { name, picture, category, number_of_students, ratings } = pInstructor;
+  const { name, picture, number_of_students, ratings } = pInstructor;
   return (
-    <div className="card  bg-base-100 shadow-xl">
+    <div className="card border border-[#008e48] hover:bg-base-100 hover:shadow-xl">
       <figure>
-        <img src={picture} className="h-60" alt={name} />
+        <img src={picture} className="h-60 mt-5 w-60 rounded-full" alt={name} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-[#008e48]">{name}</h2>
-        <h3>{category}</h3>
-        <div className="flex mt-5 justify-between items-center">
-          <p>Students: {number_of_students}</p>
-          <p>Ratings: {ratings}</p>
+        <h2 className="card-title justify-center text-2xl  text-[#008e48]">
+          {name}
+        </h2>
+        <p className="text-center">Students: {number_of_students}</p>
+
+        <div className="flex mt-5 text-[#008b46] justify-center gap-5 items-center">
+          <Link>
+            <FaFacebook></FaFacebook>
+          </Link>
+          <Link>
+            <FaLinkedinIn></FaLinkedinIn>
+          </Link>
+
+          <Link>
+            <FaYoutube></FaYoutube>
+          </Link>
+          <Link>
+            <FaTwitter></FaTwitter>
+          </Link>
         </div>
       </div>
     </div>

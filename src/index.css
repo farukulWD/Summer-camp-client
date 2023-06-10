@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.bgPrimary{
-  @apply bg-[#008e48]
+.bgPrimary {
+  @apply bg-[#008e48];
 }
 .textHeading {
-  @apply text-[#008e48] text-5xl font-bold
+  @apply text-[#008e48] text-3xl uppercase md:text-5xl font-bold;
 }
 .textPrimary {
-  @apply text-[#008e48] text-3xl font-bold
+  @apply text-[#008e48] text-3xl font-bold;
 }
 .btnPrimary {
-  @apply bg-[#008e48] hover:bg-[#008e48] text-white font-bold py-2 px-4 rounded
+  @apply bg-[#008e48] hover:bg-[#008e48] text-white font-bold py-2 px-4 rounded;
+}
+
+.drawer-side a.active {
+  background-color: white;
+  color: #008e48;
 }

@@ -2,10 +2,12 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import useSecure from "../../Hooks/useSecure";
+import useAdmin from "../../Hooks/useAdmin";
 
 const AllClassCard = ({ classData }) => {
   const [axiosSecure] = useSecure();
   const { user, loading } = useAuth();
+  const [isAdmin, isAdminLoading] = useAdmin();
   const navigate = useNavigate();
 
   const handleSelect = (selectedClass) => {
@@ -54,7 +56,7 @@ const AllClassCard = ({ classData }) => {
   } = classData;
 
   const buttonClass =
-    available_seats === 0 || user?.role == "admin"
+    available_seats === 0 || isAdmin
       ? "btn text-white btnDisabled"
       : "btnPrimary";
   const cardClass =
@@ -64,7 +66,7 @@ const AllClassCard = ({ classData }) => {
   return (
     <div className={cardClass}>
       <figure>
-        <img src={picture} className="h-60" alt={class_name} />
+        <img src={picture} className="h-60 " alt={class_name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-[#008e48]">{class_name}</h2>
@@ -83,7 +85,7 @@ const AllClassCard = ({ classData }) => {
           <button
             className={buttonClass}
             onClick={() => handleSelect(classData)}
-            disabled={available_seats === 0}
+            disabled={available_seats === 0 || isAdmin}
           >
             Select Class
           </button>

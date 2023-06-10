@@ -15,11 +15,12 @@ const GoogleLogin = () => {
   const handleLogin = () => {
     googleLogin()
       .then((result) => {
-        const { displayName, email } = result.user;
+        const { displayName, email, photoURL } = result.user;
+        console.log(result.user);
         axios
           .post("http://localhost:5000/users", {
             name: displayName,
-
+            picture: photoURL,
             email: email,
             role: "student",
           })

@@ -54,31 +54,59 @@ const router = createBrowserRouter([
     children: [
       {
         path: "selectedclass",
-        element: <SelectedClass></SelectedClass>,
+        element: (
+          <PrivetRoutes>
+            <SelectedClass></SelectedClass>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "enrolled",
-        element: <MyEnrolled></MyEnrolled>,
+        element: (
+          <PrivetRoutes>
+            <MyEnrolled></MyEnrolled>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "paymentshistory",
-        element: <PaymentHistory></PaymentHistory>,
+        element: (
+          <PrivetRoutes>
+            <PaymentHistory></PaymentHistory>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "payment/:id",
-        element: <Payments></Payments>,
+        element: (
+          <PrivetRoutes>
+            <Payments></Payments>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "myclass",
-        element: <MyClasses></MyClasses>,
+        element: (
+          <PrivetRoutes>
+            <MyClasses></MyClasses>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "addclass",
-        element: <AddClass></AddClass>,
+        element: (
+          <PrivetRoutes>
+            <AddClass></AddClass>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "update/:id",
-        element: <Update></Update>,
+        element: (
+          <PrivetRoutes>
+            <Update></Update>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "manageusers",

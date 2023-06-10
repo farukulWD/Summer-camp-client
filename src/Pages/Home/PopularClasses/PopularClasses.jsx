@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Container from "../../../Components/Container";
 import PopularCard from "./PopularCard";
+import HeadingText from "../../../Components/HeadingText";
 
 const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
@@ -16,7 +17,7 @@ const PopularClasses = () => {
   }, []);
   return (
     <div className="mt-[80px] my-10">
-      <h3 className="textHeading text-center mb-16">Our Popular Classes</h3>
+      <HeadingText heading="Our Popular Classes" text={"Classes"}></HeadingText>
       <Container>
         <div className="grid lg:grid-cols-3  gap-10">
           {topClasses.map((singleClass, index) => (

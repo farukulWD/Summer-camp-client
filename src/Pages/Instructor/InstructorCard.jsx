@@ -3,7 +3,7 @@ const InstructorCard = ({ instructor }) => {
   return (
     <div className="card  bg-base-100 shadow-xl">
       <figure>
-        <img src={picture} className="h-60" alt={name} />
+        <img src={picture} className="h-60 " alt={name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-[#008e48]">{name}</h2>

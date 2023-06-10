@@ -2,16 +2,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
 import Container from "../../../../Components/Container";
+import useSecure from "../../../../Hooks/useSecure";
 
 const MyEnrolled = () => {
+  const [axiosSecure] = useSecure();
   const { user } = useAuth();
   const [enroll, setEnrol] = useState([]);
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/myenrolled?email=${user?.email}`)
-      .then((res) => {
-        setEnrol(res.data);
-      });
+    axiosSecure.get(`/myenrolled?email=${user?.email}`).then((res) => {
+      setEnrol(res.data);
+    });
   }, []);
   return (
     <div className="w-full">

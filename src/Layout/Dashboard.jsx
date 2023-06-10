@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
@@ -25,38 +25,47 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bgPrimary text-white ">
+          <ul className="menu font-semibold p-4 w-80 h-full uppercase bgPrimary text-white ">
             {/* Sidebar content here */}
 
             {isAdmin && user && (
               <>
                 <li>
-                  <Link to="/dashboard/manageusers">Manage Users</Link>
+                  <NavLink to="/dashboard/manageusers">Manage Users</NavLink>
                 </li>
                 <li>
-                  <Link to="/dashboard/manageclasses">Manage Classes</Link>
+                  <NavLink to="/dashboard/manageclasses">
+                    Manage Classes
+                  </NavLink>
                 </li>
               </>
             )}
             {isInstructor && user && (
               <>
                 <li>
-                  <Link to="/dashboard/myclass">My Classes</Link>
+                  <NavLink to="/dashboard/myclass">My Classes</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/addclass">Add Class</NavLink>
                 </li>
               </>
             )}
             {!isAdmin && !isInstructor && user && (
               <>
                 <li>
-                  <Link to="/dashboard/selectedclass">My Selected Classes</Link>
+                  <NavLink to="/dashboard/selectedclass">
+                    My Selected Classes
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/dashboard/enrolled">My Enrolled Classes</Link>
+                  <NavLink to="/dashboard/enrolled">
+                    My Enrolled Classes
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/dashboard/paymentshistory">
+                  <NavLink to="/dashboard/paymentshistory">
                     My Payments History
-                  </Link>
+                  </NavLink>
                 </li>
               </>
             )}

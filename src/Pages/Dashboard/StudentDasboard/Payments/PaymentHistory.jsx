@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
 import Container from "../../../../Components/Container";
 import moment from "moment/moment";
+import useSecure from "../../../../Hooks/useSecure";
 
 const PaymentHistory = () => {
+  const [axiosSecure] = useSecure();
   const { user } = useAuth();
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/myPaymentHistory?email=${user?.email}`)
-      .then((res) => {
-        setHistory(res.data);
-      });
+    axiosSecure.get(`/myPaymentHistory?email=${user?.email}`).then((res) => {
+      setHistory(res.data);
+    });
   }, []);
 
   return (
