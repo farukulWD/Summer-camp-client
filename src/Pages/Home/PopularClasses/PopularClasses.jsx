@@ -10,7 +10,7 @@ const PopularClasses = () => {
 
   const topClasses = classes.slice(0, 6);
   useEffect(() => {
-    fetch("http://localhost:5000/allApprovedClass")
+    fetch("https://sports-fit-server.vercel.app/allApprovedClass")
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);

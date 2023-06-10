@@ -8,9 +8,11 @@ import bannerimg from "../../assets/download.jpeg";
 const Instructor = () => {
   const [instructors, setInstructors] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/allInstructor").then((res) => {
-      setInstructors(res.data);
-    });
+    axios
+      .get("https://sports-fit-server.vercel.app/allInstructor")
+      .then((res) => {
+        setInstructors(res.data);
+      });
   }, []);
 
   return (

@@ -18,7 +18,7 @@ const GoogleLogin = () => {
         const { displayName, email, photoURL } = result.user;
         console.log(result.user);
         axios
-          .post("http://localhost:5000/users", {
+          .post("https://sports-fit-server.vercel.app/users", {
             name: displayName,
             picture: photoURL,
             email: email,

@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
       setUser(user);
       if (user) {
         axios
-          .post("http://localhost:5000/jwt", {
+          .post("https://sports-fit-server.vercel.app/jwt", {
             email: user.email,
           })
           .then((res) => {

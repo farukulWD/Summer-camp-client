@@ -8,9 +8,11 @@ import bannerimg from "../../assets/football.jpg";
 const AllClass = () => {
   const [allClass, setAllClass] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/allApprovedClass").then((res) => {
-      setAllClass(res.data);
-    });
+    axios
+      .get("https://sports-fit-server.vercel.app/allApprovedClass")
+      .then((res) => {
+        setAllClass(res.data);
+      });
   }, []);
   console.log(allClass);
   return (

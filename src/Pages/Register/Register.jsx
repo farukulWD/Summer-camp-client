@@ -31,7 +31,7 @@ const Register = () => {
           .then(() => {
             // const savedUser = ;
             axios
-              .post("http://localhost:5000/users", {
+              .post("https://sports-fit-server.vercel.app/users", {
                 name: name,
                 picture: photoUrl,
                 email: email,
