@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Container from "../../../Components/Container";
 import PopularCard from "./PopularCard";
 import HeadingText from "../../../Components/HeadingText";
+import { Link } from "react-router-dom";
 
 const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
@@ -24,6 +25,12 @@ const PopularClasses = () => {
             <PopularCard key={index} classData={singleClass}></PopularCard>
           ))}
         </div>
+
+        <p className="text-center">
+          <Link to="allclass">
+            <button className="btnPrimary mt-10 ">More Class</button>
+          </Link>
+        </p>
       </Container>
     </div>
   );

@@ -2,7 +2,7 @@ import { FaFacebook, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const PopuInsCard = ({ pInstructor }) => {
-  const { name, picture, number_of_students, ratings } = pInstructor;
+  const { name, picture, number_of_students } = pInstructor;
   return (
     <div className="card border border-[#008e48] hover:bg-base-100 hover:shadow-xl">
       <figure>

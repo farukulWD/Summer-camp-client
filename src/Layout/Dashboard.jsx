@@ -7,8 +7,8 @@ import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
   const { user } = useAuth();
-  const [isAdmin, isAdminLoading] = useAdmin();
-  const [isInstructor, isInstructorLoading] = useInstructor();
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <div>

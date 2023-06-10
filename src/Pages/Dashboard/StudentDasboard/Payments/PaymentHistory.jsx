@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
 import Container from "../../../../Components/Container";

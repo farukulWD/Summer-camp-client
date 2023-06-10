@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import Container from "../../../Components/Container";
 import logo from "../../../assets/Logo.png";
 import useAuth from "../../../Hooks/useAuth";
-import useAdmin from "../../../Hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  const [isAdmin] = useAdmin();
 
   const handleLogOut = () => {
     logOut()
