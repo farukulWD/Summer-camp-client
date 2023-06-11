@@ -42,9 +42,7 @@ const ManageUser = () => {
       if (res.data.modifiedCount) {
         axiosSecure
           .post(`/adInstructor?email=${user?.email}`, instructor)
-          .then((res) => {
-            console.log(res.data);
-          });
+          .then((res) => {});
         Swal.fire({
           position: "top-end",
           icon: "success",

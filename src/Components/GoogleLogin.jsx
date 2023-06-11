@@ -37,7 +37,7 @@ const GoogleLogin = () => {
       })
       .catch(() => {});
   };
-  console.log(from);
+
   return (
     <div className="my-4">
       <button

@@ -28,9 +28,7 @@ const Update = () => {
   const onSubmit = (data) => {
     const { class_name, picture, available_seats, price } = data;
 
-    axiosSecure.patch(`/update/class/${id}`, data).then((res) => {
-      console.log(res.data);
-    });
+    axiosSecure.patch(`/update/class/${id}`, data).then((res) => {});
   };
 
   //  TODO work Update

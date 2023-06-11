@@ -17,7 +17,7 @@ const PopularClasses = () => {
       });
   }, []);
   return (
-    <div className="mt-[80px] my-10">
+    <div className="mt-[60px] my-10">
       <HeadingText heading="Our Popular Classes" text={"Classes"}></HeadingText>
       <Container>
         <div className="grid lg:grid-cols-3  gap-10">

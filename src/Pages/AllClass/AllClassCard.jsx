@@ -4,11 +4,13 @@ import useAuth from "../../Hooks/useAuth";
 import { Navigate, useNavigate } from "react-router-dom";
 import useSecure from "../../Hooks/useSecure";
 import useAdmin from "../../Hooks/useAdmin";
+import useInstructor from "../../Hooks/useInstructor";
 
 const AllClassCard = ({ classData }) => {
   const [axiosSecure] = useSecure();
   const { user, loading } = useAuth();
   const [isAdmin, isAdminLoading] = useAdmin();
+  const [isInstructor, isInstructorLoading] = useInstructor();
   const navigate = useNavigate();
 
   const handleSelect = (selectedClass) => {
@@ -62,7 +64,7 @@ const AllClassCard = ({ classData }) => {
   } = classData;
 
   const buttonClass =
-    available_seats === 0 || isAdmin
+    available_seats === 0 || isAdmin || isInstructor
       ? "btn text-white btnDisabled"
       : "btnPrimary";
   const cardClass =
@@ -91,7 +93,7 @@ const AllClassCard = ({ classData }) => {
           <button
             className={buttonClass}
             onClick={() => handleSelect(classData)}
-            disabled={available_seats === 0 || isAdmin}
+            disabled={available_seats === 0 || isAdmin || isInstructor}
           >
             Select Class
           </button>

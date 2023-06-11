@@ -1,7 +1,7 @@
 const HeadingText = ({ heading, text }) => {
   const isDark = localStorage.getItem("theme");
   return (
-    <div className="my-5 lg:mt-32 lg:mb-20">
+    <div className="my-5 lg:mt-20 lg:mb-20">
       <p
         className={
           isDark
