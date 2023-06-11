@@ -16,11 +16,13 @@ import Update from "../Pages/Dashboard/InstructorDashboard/Update";
 import PrivetRoutes from "./PrivetRoutes";
 import ManageUser from "../Pages/Dashboard/AdminDashboard/ManageUser";
 import ManageClasses from "../Pages/Dashboard/AdminDashboard/ManageClasses";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

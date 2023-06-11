@@ -16,7 +16,7 @@ const GoogleLogin = () => {
     googleLogin()
       .then((result) => {
         const { displayName, email, photoURL } = result.user;
-        console.log(result.user);
+
         axios
           .post("https://sports-fit-server.vercel.app/users", {
             name: displayName,
@@ -37,6 +37,7 @@ const GoogleLogin = () => {
       })
       .catch(() => {});
   };
+  console.log(from);
   return (
     <div className="my-4">
       <button

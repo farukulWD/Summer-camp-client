@@ -14,7 +14,7 @@ const AllClass = () => {
         setAllClass(res.data);
       });
   }, []);
-  console.log(allClass);
+
   return (
     <div className="pt-[64px] mb-36">
       <CommonBanner

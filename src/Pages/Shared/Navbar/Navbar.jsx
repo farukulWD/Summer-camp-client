@@ -46,7 +46,9 @@ const Navbar = () => {
           <Link to={"/login"}>Login</Link>
         </li>
       )}
-      <ToggleThem></ToggleThem>
+      <li>
+        <ToggleThem></ToggleThem>
+      </li>
     </>
   );
   return (

@@ -1,6 +1,7 @@
+import React from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import useSecure from "../../Hooks/useSecure";
 import useAdmin from "../../Hooks/useAdmin";
 
@@ -41,7 +42,12 @@ const AllClassCard = ({ classData }) => {
         }
       });
     } else {
-      navigate("/login");
+      return navigate("/login", {
+        state: {
+          from: { pathname: location.pathname, search: location.search },
+        },
+        replace: true,
+      });
     }
   };
 

@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import GoogleLogin from "../../Components/GoogleLogin";
 import { useState } from "react";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { Login } = useAuth();
@@ -26,8 +27,15 @@ const Login = () => {
     Login(email, password)
       .then(() => {
         navigate(from);
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Login has been successful",
+        });
       })
-      .catch(() => {});
+      .catch((err) => {
+        setError(err.message.slice(22, -2));
+      });
   };
 
   return (
@@ -72,6 +80,9 @@ const Login = () => {
             <span className="text-red-500">{errors.password.message}</span>
           )}
         </div>
+        <label className="label">
+          <span className="label-text text-red-600">{error}</span>
+        </label>
 
         <p className="mb-4">
           Do not Have an account?{" "}

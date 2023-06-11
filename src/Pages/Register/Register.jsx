@@ -11,6 +11,7 @@ const Register = () => {
   const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState("");
 
   const from = location.state?.from?.pathname || "/";
   const { createUserWithEmail, updateUserProfile } = useAuth();
@@ -53,7 +54,9 @@ const Register = () => {
           })
           .catch(() => {});
       })
-      .catch(() => {});
+      .catch((err) => {
+        setError(err.message.slice(22, -2));
+      });
   };
 
   return (
@@ -153,6 +156,9 @@ const Register = () => {
             {...register("photoUrl")}
           />
         </div>
+        <label className="label">
+          <span className="label-text text-red-600">{error}</span>
+        </label>
 
         <p className="mb-4">
           Already Have an account?{" "}
