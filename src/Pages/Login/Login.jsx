@@ -2,9 +2,13 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import GoogleLogin from "../../Components/GoogleLogin";
+import { useState } from "react";
+import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 
 const Login = () => {
   const { Login } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,9 +52,9 @@ const Login = () => {
             <span className="text-red-500">{errors.email.message}</span>
           )}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             id="password"
             className="w-full p-2 border focus:outline-none focus:border-green-500 border-gray-300 rounded"
@@ -58,6 +62,12 @@ const Login = () => {
               required: "Password is required",
             })}
           />
+          <span
+            className="absolute top-1/2 transform -translate-y-1/2 right-2 cursor-pointer"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <RiEyeOffFill /> : <RiEyeFill />}
+          </span>
           {errors.password && (
             <span className="text-red-500">{errors.password.message}</span>
           )}

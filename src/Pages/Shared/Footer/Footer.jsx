@@ -2,8 +2,9 @@ import Container from "../../../Components/Container";
 
 const Footer = () => {
   // TODO add contact Section
+  const isDark = localStorage.getItem("theme");
   return (
-    <section className="bg-[#2b8e5d]">
+    <section className={isDark == "dark" ? "bg-[#1d232a]" : "bg-[#2b8e5d]"}>
       <Container>
         <footer className="footer footer-center p-10  text-primary-content">
           <div>

@@ -1,13 +1,16 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../Components/GoogleLogin";
+import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 
 const Register = () => {
   const location = useLocation();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const from = location.state?.from?.pathname || "/";
   const { createUserWithEmail, updateUserProfile } = useAuth();
@@ -87,9 +90,9 @@ const Register = () => {
             <span className="text-red-500">{errors.email.message}</span>
           )}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             id="password"
             className="w-full p-2 border focus:outline-none focus:border-green-500 border-gray-300 rounded"
@@ -106,13 +109,19 @@ const Register = () => {
               },
             })}
           />
+          <span
+            className="absolute top-1/2 transform -translate-y-1/2 right-2 cursor-pointer"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <RiEyeOffFill /> : <RiEyeFill />}
+          </span>
           {errors.password && (
             <span className="text-red-500">{errors.password.message}</span>
           )}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <input
-            type="password"
+            type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm Password"
             id="confirmPassword"
             className="w-full p-2 border focus:outline-none focus:border-green-500 border-gray-300 rounded"
@@ -122,6 +131,13 @@ const Register = () => {
                 value === password.current || "The passwords do not match",
             })}
           />
+          <span
+            className="absolute top-1/2 transform -translate-y-1/2 right-2 cursor-pointer"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          >
+            {showConfirmPassword ? <RiEyeOffFill /> : <RiEyeFill />}
+          </span>
+
           {errors.confirmPassword && (
             <span className="text-red-500">
               {errors.confirmPassword.message}

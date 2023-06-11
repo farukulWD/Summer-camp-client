@@ -8,7 +8,6 @@ import ToggleThem from "../../../Components/TogleDarkLight/ToggleThem";
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const isDark = localStorage.getItem("theme");
-  console.log("isdark", isDark);
 
   const handleLogOut = () => {
     logOut()
