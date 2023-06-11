@@ -14,7 +14,7 @@ const PopuInsCard = ({ pInstructor }) => {
         </h2>
         <p className="text-center">Students: {number_of_students}</p>
 
-        <div className="flex mt-5 text-[#008b46] justify-center gap-5 items-center">
+        <div className="flex mt-5 text-xl text-[#008b46] justify-center gap-5 items-center">
           <Link>
             <FaFacebook></FaFacebook>
           </Link>

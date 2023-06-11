@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import Container from "../../../Components/Container";
 import logo from "../../../assets/Logo.png";
 import useAuth from "../../../Hooks/useAuth";
+import ToggleThem from "../../../Components/TogleDarkLight/ToggleThem";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const isDark = localStorage.getItem("theme");
+  console.log("isdark", isDark);
 
   const handleLogOut = () => {
     logOut()
@@ -44,10 +47,17 @@ const Navbar = () => {
           <Link to={"/login"}>Login</Link>
         </li>
       )}
+      <ToggleThem></ToggleThem>
     </>
   );
   return (
-    <div className="w-full text-white bgPrimary fixed z-10">
+    <div
+      className={
+        isDark === "dark"
+          ? "w-full text-white bg-[#1d232a] fixed z-10"
+          : "w-full text-white bgPrimary fixed z-10"
+      }
+    >
       <Container>
         <div className="navbar  flex items-center justify-between mx-auto px-4 py-1">
           <div className="flex items-center">
