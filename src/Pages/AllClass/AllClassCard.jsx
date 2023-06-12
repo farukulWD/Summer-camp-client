@@ -5,6 +5,9 @@ import { Navigate, useNavigate } from "react-router-dom";
 import useSecure from "../../Hooks/useSecure";
 import useAdmin from "../../Hooks/useAdmin";
 import useInstructor from "../../Hooks/useInstructor";
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
 
 const AllClassCard = ({ classData }) => {
   const [axiosSecure] = useSecure();
@@ -80,9 +83,14 @@ const AllClassCard = ({ classData }) => {
         <h2 className="card-title text-[#008e48]">{class_name}</h2>
         <h3>{instructor}</h3>
         <div className="flex my-5 justify-between items-center">
-          <div>
+          <div className="">
             <p>Students: {totalEnrolled}</p>
-            <p>Ratings: {rating}</p>
+            <Rating
+              className="text-[#008e48]"
+              style={{ maxWidth: 100 }}
+              value={rating}
+              readOnly
+            />
           </div>
           <div>
             <p>Seats: {available_seats}</p>
