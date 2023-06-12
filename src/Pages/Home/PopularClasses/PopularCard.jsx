@@ -1,11 +1,16 @@
 import { Rating } from "@smastrom/react-rating";
+import { motion } from "framer-motion";
 
 import "@smastrom/react-rating/style.css";
 
 const PopularCard = ({ classData }) => {
   const { class_name, picture, totalEnrolled, rating } = classData;
   return (
-    <div className="card  bg-base-100 shadow-xl">
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="card  bg-base-100 shadow-xl"
+    >
       <figure>
         <img src={picture} className="h-60 " alt={class_name} />
       </figure>
@@ -25,7 +30,7 @@ const PopularCard = ({ classData }) => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

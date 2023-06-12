@@ -2,6 +2,12 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
+import { FaHome, FaUserEdit } from "react-icons/fa";
+import { MdClass, MdPayment } from "react-icons/md";
+import { TbSelect } from "react-icons/tb";
+import { HiSquare3Stack3D } from "react-icons/hi2";
+import { AiOutlineAppstoreAdd } from "react-icons/ai";
+import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
 
 // TODO use  active Active Link
 
@@ -31,11 +37,13 @@ const Dashboard = () => {
             {isAdmin && user && (
               <>
                 <li>
-                  <NavLink to="/dashboard/manageusers">Manage Users</NavLink>
+                  <NavLink to="/dashboard/manageusers">
+                    <FaUserEdit></FaUserEdit> Manage Users
+                  </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/manageclasses">
-                    Manage Classes
+                    <MdClass></MdClass> Manage Classes
                   </NavLink>
                 </li>
               </>
@@ -43,10 +51,15 @@ const Dashboard = () => {
             {isInstructor && user && (
               <>
                 <li>
-                  <NavLink to="/dashboard/myclass">My Classes</NavLink>
+                  <NavLink to="/dashboard/myclass">
+                    <BsReverseLayoutTextWindowReverse></BsReverseLayoutTextWindowReverse>{" "}
+                    My Classes
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/addclass">Add Class</NavLink>
+                  <NavLink to="/dashboard/addclass">
+                    <AiOutlineAppstoreAdd></AiOutlineAppstoreAdd> Add Class
+                  </NavLink>
                 </li>
               </>
             )}
@@ -54,17 +67,17 @@ const Dashboard = () => {
               <>
                 <li>
                   <NavLink to="/dashboard/selectedclass">
-                    My Selected Classes
+                    <TbSelect></TbSelect> My Selected Classes
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/enrolled">
-                    My Enrolled Classes
+                    <MdPayment></MdPayment> My Enrolled Classes
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/paymentshistory">
-                    My Payments History
+                    <HiSquare3Stack3D></HiSquare3Stack3D> My Payments History
                   </NavLink>
                 </li>
               </>
@@ -72,7 +85,9 @@ const Dashboard = () => {
 
             <div className="divider border-red-400"></div>
             <li>
-              <Link to={"/"}>Home</Link>
+              <Link to={"/"}>
+                <FaHome /> Home
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,10 +1,15 @@
 import { FaFacebook, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const PopuInsCard = ({ pInstructor }) => {
   const { name, picture, number_of_students } = pInstructor;
   return (
-    <div className="card border border-[#008e48] hover:bg-base-100 hover:shadow-xl">
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="card border border-[#008e48] hover:bg-base-100 hover:shadow-xl"
+    >
       <figure>
         <img src={picture} className="h-60 mt-5 w-60 rounded-full" alt={name} />
       </figure>
@@ -30,7 +35,7 @@ const PopuInsCard = ({ pInstructor }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

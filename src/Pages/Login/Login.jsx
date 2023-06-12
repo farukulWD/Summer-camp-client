@@ -39,7 +39,7 @@ const Login = () => {
   };
 
   return (
-    <div className="py-16 max-w-lg mx-auto lg:h-[500px]">
+    <div className="py-16 px-2 max-w-lg mx-auto lg:h-[500px]">
       <h2 className="textPrimary text-center my-10">Please Login</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">

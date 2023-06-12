@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const BannerContent = ({ image, heading, text }) => {
   return (
@@ -7,8 +8,13 @@ const BannerContent = ({ image, heading, text }) => {
         <img src={image} className=" rounded-lg h-[350px] " />
       </div>
       <div className="lg:w-1/2">
-        <h1 className="textHeading">{heading}</h1>
-        <p className="py-6">{text}</p>
+        <Slide direction="right">
+          <h1 className="textHeading">{heading}</h1>
+        </Slide>
+        <Fade delay={1e3} cascade damping={1e-1}>
+          <p className="py-6">{text}</p>
+        </Fade>
+
         <Link to={"allclass"}>
           <button className="btnPrimary uppercase">view Classes</button>
         </Link>

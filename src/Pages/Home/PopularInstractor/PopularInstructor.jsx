@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Container from "../../../Components/Container";
 import PopuInsCard from "./PopuInsCard";
@@ -33,7 +34,13 @@ const PopularInstructor = () => {
 
           <p className="text-center">
             <Link to="instructor">
-              <button className="btnPrimary my-5 ">View More</button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="btnPrimary my-5 "
+              >
+                View More
+              </motion.button>
             </Link>
           </p>
         </Container>

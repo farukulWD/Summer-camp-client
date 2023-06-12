@@ -60,7 +60,7 @@ const Register = () => {
   };
 
   return (
-    <div className="py-16 max-w-lg mx-auto">
+    <div className="py-16 px-2 max-w-lg mx-auto">
       <h2 className="textPrimary text-center my-10">Register Here</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="">
         <div className="mb-4">

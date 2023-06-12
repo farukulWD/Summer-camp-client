@@ -4,10 +4,14 @@ import Container from "../../../Components/Container";
 import logo from "../../../assets/Logo.png";
 import useAuth from "../../../Hooks/useAuth";
 import ToggleThem from "../../../Components/TogleDarkLight/ToggleThem";
+import useAdmin from "../../../Hooks/useAdmin";
+import useInstructor from "../../../Hooks/useInstructor";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const isDark = localStorage.getItem("theme");
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   const handleLogOut = () => {
     logOut()
@@ -37,9 +41,21 @@ const Navbar = () => {
           <li>
             <Link onClick={handleLogOut}>Log Out</Link>
           </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
+          {!isAdmin && !isInstructor && (
+            <li>
+              <Link to="/dashboard/selectedclass">Dashboard</Link>
+            </li>
+          )}
+          {isAdmin && (
+            <li>
+              <Link to="/dashboard/manageusers">Dashboard</Link>
+            </li>
+          )}
+          {isInstructor && (
+            <li>
+              <Link to="/dashboard/myclass">Dashboard</Link>
+            </li>
+          )}
         </>
       ) : (
         <li>

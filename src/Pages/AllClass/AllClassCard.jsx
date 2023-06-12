@@ -1,7 +1,7 @@
 import React from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useSecure from "../../Hooks/useSecure";
 import useAdmin from "../../Hooks/useAdmin";
 import useInstructor from "../../Hooks/useInstructor";

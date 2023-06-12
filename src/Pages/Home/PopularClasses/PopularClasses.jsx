@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { useEffect, useState } from "react";
 import Container from "../../../Components/Container";
 import PopularCard from "./PopularCard";
@@ -28,7 +30,13 @@ const PopularClasses = () => {
 
         <p className="text-center">
           <Link to="allclass">
-            <button className="btnPrimary mt-10 ">More Class</button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="btnPrimary mt-10 "
+            >
+              More Class
+            </motion.button>
           </Link>
         </p>
       </Container>
