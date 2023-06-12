@@ -3,7 +3,6 @@ import Container from "../../../Components/Container";
 import { FaFacebook, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
-  // TODO add contact Section
   const isDark = localStorage.getItem("theme");
   return (
     <section className={isDark == "dark" ? "bg-[#1d232a]" : "bg-[#2b8e5d]"}>

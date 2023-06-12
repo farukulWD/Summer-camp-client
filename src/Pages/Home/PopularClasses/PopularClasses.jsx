@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
-  // TODO use axios or Query
 
   const topClasses = classes.slice(0, 6);
   useEffect(() => {

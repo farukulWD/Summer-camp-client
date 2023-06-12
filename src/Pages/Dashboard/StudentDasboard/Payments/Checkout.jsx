@@ -5,8 +5,6 @@ import useAuth from "../../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useSecure from "../../../../Hooks/useSecure";
 
-// TODO use secure systems
-
 const Checkout = ({ price, classData, isLoading }) => {
   const [axiosSecure] = useSecure();
   const {

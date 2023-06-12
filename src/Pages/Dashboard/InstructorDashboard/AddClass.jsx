@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import useSecure from "../../../Hooks/useSecure";
 const keyImage = import.meta.env.VITE_Image_key;
 const imageHostingUrl = `https://api.imgbb.com/1/upload?key=${keyImage}`;
-// TODO use secure system
+
 const AddClass = () => {
   const [axiosSecure] = useSecure();
   const { user } = useAuth();

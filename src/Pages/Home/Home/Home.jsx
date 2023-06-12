@@ -7,7 +7,6 @@ import { Slide } from "react-awesome-reveal";
 
 const Home = () => {
   return (
-    // TODO Add an extra section
     <div className="">
       <Banner></Banner>
       <Slide direction="right">

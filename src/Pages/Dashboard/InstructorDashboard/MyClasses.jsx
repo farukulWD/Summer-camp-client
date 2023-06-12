@@ -6,8 +6,6 @@ import { ImBin } from "react-icons/im";
 import Swal from "sweetalert2";
 import useSecure from "../../../Hooks/useSecure";
 
-// TODO cart system
-
 const MyClasses = () => {
   const [axiosSecure] = useSecure();
   const { user, loading } = useAuth();

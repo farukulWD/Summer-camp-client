@@ -6,8 +6,6 @@ import useAuth from "../../../../Hooks/useAuth";
 import Container from "../../../../Components/Container";
 import useSecure from "../../../../Hooks/useSecure";
 
-// TODO add payments methods and delete action
-
 const SelectedClass = () => {
   const [axiosSecure] = useSecure();
   const { user } = useAuth();

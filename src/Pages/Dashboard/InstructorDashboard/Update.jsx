@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+
 import { useForm } from "react-hook-form";
 import useSecure from "../../../Hooks/useSecure";
 
@@ -30,8 +30,6 @@ const Update = () => {
 
     axiosSecure.patch(`/update/class/${id}`, data).then((res) => {});
   };
-
-  //  TODO work Update
 
   return (
     <div className="w-full">

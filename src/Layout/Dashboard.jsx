@@ -10,8 +10,6 @@ import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
 import { RingLoader } from "react-spinners";
 
-// TODO use  active Active Link
-
 const Dashboard = () => {
   const { user } = useAuth();
   const [isAdmin] = useAdmin();
