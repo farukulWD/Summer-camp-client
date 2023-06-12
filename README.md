@@ -3,6 +3,18 @@
 - Live Website: [My project link](https://sportsfit.web.app "Project LInk")
 - Built with: React.js
 
+# Features My Website
+
+- User-friendly interface: The website utilizes React, React Router Dom, and Framer Motion to create a smooth and interactive user experience. The interface is designed to be intuitive and easy to navigate.
+
+- Secure payment processing: Integration with Stripe allows seamless and secure payment processing for transactions on your website. Users can confidently make payments for subscriptions, products, or services.
+
+- Dynamic content and data management: Firebase is used as a backend service, enabling real-time data synchronization and efficient data management. This allows for dynamic content updates, user authentication, and database storage.
+
+- Enhanced user interactions: The website utilizes various React packages like React Hook Form, React Icons, and React Spinners to enhance user interactions. These packages provide features such as form handling, customizable icons, and animated spinners to improve the overall user experience.
+
+- Engaging visual elements: The website incorporates visual enhancements using packages like React Responsive Carousel, React Slick, LottieFiles React Lottie Player, and smastrom React Rating. These packages enable the inclusion of interactive carousels, sleek sliders, engaging animations, and user ratings, making the website visually appealing and captivating.
+
 # Technology:
 
 - React
