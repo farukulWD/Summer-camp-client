@@ -33,7 +33,7 @@ const FeedbackModal = ({ onClose, showFeedbackSuccess, id }) => {
             type="submit"
             className="w-full px-4 py-2 my-4 text-white bg-blue-500 rounded hover:bg-blue-600"
           >
-            Update
+            Send Feedback
           </button>
         </form>
         {/* <button className="btn w-full" onClick={onClose}>
