@@ -17,6 +17,8 @@ import PrivetRoutes from "./PrivetRoutes";
 import ManageUser from "../Pages/Dashboard/AdminDashboard/ManageUser";
 import ManageClasses from "../Pages/Dashboard/AdminDashboard/ManageClasses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import AdminRoutes from "./AdminRoutes";
+import InstructorRoutes from "./InstructorRoutes";
 
 const router = createBrowserRouter([
   {
@@ -89,41 +91,41 @@ const router = createBrowserRouter([
       {
         path: "myclass",
         element: (
-          <PrivetRoutes>
+          <InstructorRoutes>
             <MyClasses></MyClasses>
-          </PrivetRoutes>
+          </InstructorRoutes>
         ),
       },
       {
         path: "addclass",
         element: (
-          <PrivetRoutes>
+          <InstructorRoutes>
             <AddClass></AddClass>
-          </PrivetRoutes>
+          </InstructorRoutes>
         ),
       },
       {
         path: "update/:id",
         element: (
-          <PrivetRoutes>
+          <InstructorRoutes>
             <Update></Update>
-          </PrivetRoutes>
+          </InstructorRoutes>
         ),
       },
       {
         path: "manageusers",
         element: (
-          <PrivetRoutes>
+          <AdminRoutes>
             <ManageUser></ManageUser>
-          </PrivetRoutes>
+          </AdminRoutes>
         ),
       },
       {
         path: "manageclasses",
         element: (
-          <PrivetRoutes>
+          <AdminRoutes>
             <ManageClasses></ManageClasses>
-          </PrivetRoutes>
+          </AdminRoutes>
         ),
       },
     ],

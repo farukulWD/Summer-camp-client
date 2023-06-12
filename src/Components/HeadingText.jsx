@@ -4,7 +4,7 @@ const HeadingText = ({ heading, text }) => {
     <div className="my-5 lg:mt-20 lg:mb-20">
       <p
         className={
-          isDark
+          isDark == "dark"
             ? "text-center uppercase text-white"
             : "text-center uppercase text-black"
         }
