@@ -9,7 +9,7 @@
 
 - Secure payment processing: Integration with Stripe allows seamless and secure payment processing for transactions on your website. Users can confidently make payments for subscriptions, products, or services.
 
-- Dynamic content and data management: Firebase is used as a backend service, enabling real-time data synchronization and efficient data management. This allows for dynamic content updates, user authentication, and database storage.
+- Dynamic content and data management: express js and mongodb is used as a backend service, enabling real-time data synchronization and efficient data management. This allows for dynamic content updates, user authentication, and database storage.
 
 - Enhanced user interactions: The website utilizes various React packages like React Hook Form, React Icons, and React Spinners to enhance user interactions. These packages provide features such as form handling, customizable icons, and animated spinners to improve the overall user experience.
 
