@@ -1,6 +1,7 @@
 ## Website Name: SportsFit summer camp
 
 - Live Website: [My project link](https://sportsfit.web.app "Project LInk")
+- admin email and password => email: admin@ad.com pass: Admin@154
 - Built with: React.js
 
 # Features My Website
